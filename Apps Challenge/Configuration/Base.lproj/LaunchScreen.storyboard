@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="igQ-ZI-QAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habitissimo Company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQL-gT-upK">
+                                <rect key="frame" x="50" y="708" width="314" height="34"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-Wk-88T">
+                                <rect key="frame" x="100" y="666" width="214" height="2"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="F1X-St-0Kg"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-Fw-Ecs">
+                                <rect key="frame" x="50" y="417" width="314" height="72"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-3i-p0K">
+                                <rect key="frame" x="87" y="147" width="240" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="8er-NB-g2f"/>
+                                    <constraint firstAttribute="width" constant="240" id="Zyi-2i-Csr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j9h-4A-JmD"/>
+                        <color key="backgroundColor" red="0.5546875" green="0.46897704989647837" blue="0.39087975187744028" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="j9h-4A-JmD" firstAttribute="trailing" secondItem="oB7-Fw-Ecs" secondAttribute="trailing" constant="50" id="3Za-te-WU8"/>
+                            <constraint firstItem="hPj-3i-p0K" firstAttribute="top" relation="greaterThanOrEqual" secondItem="igQ-ZI-QAc" secondAttribute="top" id="LtV-cD-ag2"/>
+                            <constraint firstItem="j9h-4A-JmD" firstAttribute="bottom" secondItem="vQL-gT-upK" secondAttribute="bottom" constant="120" id="aeJ-YK-Dqk"/>
+                            <constraint firstItem="PEx-Wk-88T" firstAttribute="leading" secondItem="j9h-4A-JmD" secondAttribute="leading" constant="100" id="duG-k8-s3m"/>
+                            <constraint firstItem="oB7-Fw-Ecs" firstAttribute="centerY" secondItem="j9h-4A-JmD" secondAttribute="centerY" id="eD8-dQ-SoA"/>
+                            <constraint firstItem="vQL-gT-upK" firstAttribute="leading" secondItem="j9h-4A-JmD" secondAttribute="leading" constant="50" id="ghY-yx-LT2"/>
+                            <constraint firstItem="oB7-Fw-Ecs" firstAttribute="top" secondItem="hPj-3i-p0K" secondAttribute="bottom" priority="500" id="hBo-RD-ZM5"/>
+                            <constraint firstItem="oB7-Fw-Ecs" firstAttribute="leading" secondItem="j9h-4A-JmD" secondAttribute="leading" constant="50" id="i2r-il-bbC"/>
+                            <constraint firstItem="hPj-3i-p0K" firstAttribute="centerX" secondItem="j9h-4A-JmD" secondAttribute="centerX" id="jL5-Qk-rqd"/>
+                            <constraint firstItem="j9h-4A-JmD" firstAttribute="trailing" secondItem="PEx-Wk-88T" secondAttribute="trailing" constant="100" id="jYQ-ge-Cib"/>
+                            <constraint firstItem="j9h-4A-JmD" firstAttribute="trailing" secondItem="vQL-gT-upK" secondAttribute="trailing" constant="50" id="jq7-Ow-iN8"/>
+                            <constraint firstItem="vQL-gT-upK" firstAttribute="top" secondItem="PEx-Wk-88T" secondAttribute="bottom" constant="40" id="vU6-dh-hZf"/>
+                            <constraint firstItem="oB7-Fw-Ecs" firstAttribute="top" secondItem="hPj-3i-p0K" secondAttribute="bottom" priority="750" constant="50" id="yJe-2H-r1G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="512" height="512"/>
+    </resources>
+</document>

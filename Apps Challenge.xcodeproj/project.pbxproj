@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */; };
-		EE41C4CD262B1C6E00DD02EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4CC262B1C6E00DD02EB /* SceneDelegate.swift */; };
-		EE41C4CF262B1C6E00DD02EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4CE262B1C6E00DD02EB /* ViewController.swift */; };
-		EE41C4D2262B1C6E00DD02EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D0262B1C6E00DD02EB /* Main.storyboard */; };
 		EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */; };
 		EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */; };
 		EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */; };
@@ -19,9 +16,6 @@
 /* Begin PBXFileReference section */
 		EE41C4C7262B1C6E00DD02EB /* Apps Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apps Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE41C4CC262B1C6E00DD02EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE41C4CE262B1C6E00DD02EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE41C4D1262B1C6E00DD02EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE41C4D4262B1C6E00DD02EB /* Apps_Challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apps_Challenge.xcdatamodel; sourceTree = "<group>"; };
 		EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE41C4D9262B1C6F00DD02EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,16 +52,45 @@
 		EE41C4C9262B1C6E00DD02EB /* Apps Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */,
-				EE41C4CC262B1C6E00DD02EB /* SceneDelegate.swift */,
-				EE41C4CE262B1C6E00DD02EB /* ViewController.swift */,
-				EE41C4D0262B1C6E00DD02EB /* Main.storyboard */,
-				EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */,
-				EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */,
-				EE41C4DB262B1C6F00DD02EB /* Info.plist */,
-				EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */,
+				EEC6F772262B25EE0014B053 /* Modules */,
+				EE41C4E8262B203800DD02EB /* Database */,
+				EE41C4E7262B202800DD02EB /* Resources */,
+				EE41C4E6262B201100DD02EB /* Configuration */,
 			);
 			path = "Apps Challenge";
+			sourceTree = "<group>";
+		};
+		EE41C4E6262B201100DD02EB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */,
+				EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */,
+				EE41C4DB262B1C6F00DD02EB /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		EE41C4E7262B202800DD02EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE41C4E8262B203800DD02EB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		EEC6F772262B25EE0014B053 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +152,6 @@
 			files = (
 				EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */,
 				EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */,
-				EE41C4D2262B1C6E00DD02EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,24 +162,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE41C4CF262B1C6E00DD02EB /* ViewController.swift in Sources */,
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
-				EE41C4CD262B1C6E00DD02EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE41C4D0262B1C6E00DD02EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE41C4D1262B1C6E00DD02EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Apps Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Apps Challenge/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,7 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fjsg.Apps-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,7 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Apps Challenge/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Apps Challenge/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fjsg.Apps-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

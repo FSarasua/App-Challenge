@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "playstore.png",
       "idiom" : "universal"
     }
   ],
