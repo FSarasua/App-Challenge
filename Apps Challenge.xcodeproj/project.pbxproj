@@ -11,6 +11,10 @@
 		EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */; };
 		EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */; };
 		EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */; };
+		EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */; };
+		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
+		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
+		EEC6F78A262B668B0014B053 /* BudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE41C4D9262B1C6F00DD02EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE41C4DB262B1C6F00DD02EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
+		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
+		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,8 @@
 		EE41C4C9262B1C6E00DD02EB /* Apps Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				EEC6F772262B25EE0014B053 /* Modules */,
+				EEC6F782262B66320014B053 /* Item */,
+				EEC6F772262B25EE0014B053 /* Module */,
 				EE41C4E8262B203800DD02EB /* Database */,
 				EE41C4E7262B202800DD02EB /* Resources */,
 				EE41C4E6262B201100DD02EB /* Configuration */,
@@ -86,11 +95,54 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
-		EEC6F772262B25EE0014B053 /* Modules */ = {
+		EEC6F772262B25EE0014B053 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F77A262B5DAD0014B053 /* BudgetList */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		EEC6F77A262B5DAD0014B053 /* BudgetList */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */,
+				EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */,
+			);
+			path = BudgetList;
+			sourceTree = "<group>";
+		};
+		EEC6F782262B66320014B053 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F784262B663C0014B053 /* Model */,
+				EEC6F783262B66380014B053 /* Cell */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		EEC6F783262B66380014B053 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F786262B66570014B053 /* Budget */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EEC6F784262B663C0014B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Modules;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EEC6F786262B66570014B053 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */,
+				EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */,
+			);
+			path = Budget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */,
 				EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */,
+				EEC6F78A262B668B0014B053 /* BudgetTableViewCell.xib in Resources */,
 				EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */,
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
+				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
