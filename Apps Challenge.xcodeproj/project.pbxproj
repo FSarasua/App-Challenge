@@ -15,6 +15,10 @@
 		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
 		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
 		EEC6F78A262B668B0014B053 /* BudgetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */; };
+		EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F78D262C49AB0014B053 /* CreateBudgetViewController.swift */; };
+		EEC6F790262C49AB0014B053 /* CreateBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F78E262C49AB0014B053 /* CreateBudgetViewController.xib */; };
+		EEC6F795262CB7920014B053 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F794262CB7920014B053 /* Roboto-Light.ttf */; };
+		EEC6F798262CB81E0014B053 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F797262CB81E0014B053 /* Roboto-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
 		EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetTableViewCell.xib; sourceTree = "<group>"; };
+		EEC6F78D262C49AB0014B053 /* CreateBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetViewController.swift; sourceTree = "<group>"; };
+		EEC6F78E262C49AB0014B053 /* CreateBudgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateBudgetViewController.xib; sourceTree = "<group>"; };
+		EEC6F794262CB7920014B053 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		EEC6F797262CB81E0014B053 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		EE41C4E7262B202800DD02EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EEC6F793262CB7740014B053 /* Font */,
 				EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -98,6 +107,7 @@
 		EEC6F772262B25EE0014B053 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				EEC6F78C262C498F0014B053 /* CreateBudget */,
 				EEC6F77A262B5DAD0014B053 /* BudgetList */,
 			);
 			path = Module;
@@ -143,6 +153,24 @@
 				EEC6F788262B668B0014B053 /* BudgetTableViewCell.xib */,
 			);
 			path = Budget;
+			sourceTree = "<group>";
+		};
+		EEC6F78C262C498F0014B053 /* CreateBudget */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F78D262C49AB0014B053 /* CreateBudgetViewController.swift */,
+				EEC6F78E262C49AB0014B053 /* CreateBudgetViewController.xib */,
+			);
+			path = CreateBudget;
+			sourceTree = "<group>";
+		};
+		EEC6F793262CB7740014B053 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F797262CB81E0014B053 /* Roboto-Medium.ttf */,
+				EEC6F794262CB7920014B053 /* Roboto-Light.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +232,11 @@
 			files = (
 				EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */,
 				EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */,
+				EEC6F795262CB7920014B053 /* Roboto-Light.ttf in Resources */,
+				EEC6F798262CB81E0014B053 /* Roboto-Medium.ttf in Resources */,
 				EEC6F78A262B668B0014B053 /* BudgetTableViewCell.xib in Resources */,
 				EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */,
+				EEC6F790262C49AB0014B053 /* CreateBudgetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +251,7 @@
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
 				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
+				EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

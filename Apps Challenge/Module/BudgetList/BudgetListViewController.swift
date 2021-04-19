@@ -25,6 +25,7 @@ class BudgetListViewController: UIViewController {
     //MARK: - Private Method's
     
     private func loadData() {
+        // TableView
         // TODO: Constants
         // TODO: UINib
         let budgetNib = UINib(nibName: "BudgetTableViewCell", bundle: nil)
@@ -34,8 +35,10 @@ class BudgetListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        // NavigationBar
         // TODO: Constants
-        self.title = "Budget List"
+        self.title = "Presupuestos"
+        self.createAddButton()
     }
     
     private func loadStyle() {
@@ -47,6 +50,25 @@ class BudgetListViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    func createAddButton() {
+        let addButton = UIButton(type: .custom)
+        // TODO: UIImage
+        let image = UIImage(named: "plus1")
+        
+        addButton.setImage(image, for: .normal)
+        addButton.addTarget(self, action: #selector(goToCreateBudget), for: .touchUpInside)
+        
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        addButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView:  addButton)
+    }
+    
+    @objc func goToCreateBudget() {
+        self.navigationController?.pushViewController(CreateBudgetViewController(), animated: true)
     }
 }
 
@@ -70,7 +92,6 @@ extension BudgetListViewController: UITableViewDataSource {
 extension BudgetListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         print(indexPath.row)
     }
 }
