@@ -59,7 +59,8 @@ class CreateBudgetViewController: UIViewController {
     var selectedTextField: UIView? = nil
     
     let countries: [String] = ["España", "Francia", "Italia", "Alemania", "China"]
-    var tableData: [String] = []
+    var suppContries: [String] = []
+    var tableData: [LocationCellModel] = []
     
     let numbers: [Int] = [0, 1, 2, 3]
     let decimals: [Int:[Double]] = [0:[0.1, 0.2, 0.3], 1:[1.1, 1.2, 1.3], 2:[2.1, 2.2, 2.3], 3:[3.1, 3.2, 3.3]]
@@ -114,6 +115,7 @@ class CreateBudgetViewController: UIViewController {
         // Table View
         self.tableViewLocation.dataSource = self
         self.tableViewLocation.delegate = self
+        self.tableViewLocation.register(Constants.Nib.LocationCell, forCellReuseIdentifier: Constants.Identifier.LocationID)
         
         // Picker View
         self.pickerView.dataSource = self
@@ -170,19 +172,42 @@ class CreateBudgetViewController: UIViewController {
         }
     }
     
+    // TODO: Refactor table view logic.
+    private func filterCountriesWith(text: String) {
+        self.tableData.removeAll()
+        
+        if text.count != 0 {
+            self.suppContries = self.countries.compactMap({ return $0.lowercased().starts(with: text.lowercased()) ? $0 : nil })
+        } else {
+            self.suppContries = self.countries
+        }
+    }
+    
+    private func loadTableData() {
+        self.tableData = []
+        
+        for country in self.suppContries {
+            let data = LocationCellModel()
+            
+            data.title = country
+            
+            if country == self.suppContries.first {
+                data.isFirstItem = true
+            }
+            self.tableData.append(data)
+        }
+    }
+    
     //MARK: - Actions
     
     @objc func editingChanged(_ textField: UITextField) {
-        self.tableData.removeAll()
         
-        if textField.text?.count != 0 {
-            guard let text = textField.text else {
-                return
-            }
-            self.tableData = self.countries.compactMap({ return $0.lowercased().starts(with: text.lowercased()) ? $0 : nil })
-        } else {
-            self.tableData = self.countries
+        guard let text = textField.text else {
+            return
         }
+        self.filterCountriesWith(text: text)
+        self.loadTableData()
+        
         self.tableViewLocation.isHidden = self.tableData.isEmpty
         
         if !self.tableData.isEmpty {
@@ -227,7 +252,7 @@ extension UIScrollView {
 
         if let origin = view.superview {
             let childStartPoint = origin.convert(view.frame.origin, to: self)
-            self.scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y - 150, width: 1, height: self.frame.height), animated: animated)
+            self.scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y - 100, width: 1, height: self.frame.height), animated: animated)
         }
     }
 }
@@ -278,21 +303,27 @@ extension CreateBudgetViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        let country = self.tableData[indexPath.row]
-        
-        cell.textLabel?.text = country
+        guard let cell: LocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:  Constants.Identifier.LocationID) as? LocationTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.data = self.tableData[indexPath.row]
+        cell.loadCell()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 44
     }
 }
 
 extension CreateBudgetViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let country = self.tableData[indexPath.row]
+        let data = self.tableData[indexPath.row]
         
-        self.tfLocation.text = country
+        self.tfLocation.text = data.title
         self.dismissKeyboard()
     }
 }

@@ -20,6 +20,11 @@
 		EEC6F795262CB7920014B053 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F794262CB7920014B053 /* Roboto-Light.ttf */; };
 		EEC6F798262CB81E0014B053 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F797262CB81E0014B053 /* Roboto-Medium.ttf */; };
 		EEDA213626305D1000FE8927 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA213526305D1000FE8927 /* Constants.swift */; };
+		EEDA2139263068AF00FE8927 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDA2138263068AF00FE8927 /* Colors.xcassets */; };
+		EEDA213C263068BA00FE8927 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA213B263068BA00FE8927 /* Colors.swift */; };
+		EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA213F263071DB00FE8927 /* LocationTableViewCell.swift */; };
+		EEDA2142263071DB00FE8927 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */; };
+		EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA2145263074F200FE8927 /* LocationCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		EEC6F794262CB7920014B053 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		EEC6F797262CB81E0014B053 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		EEDA213526305D1000FE8927 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EEDA2138263068AF00FE8927 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EEDA213B263068BA00FE8927 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		EEDA213F263071DB00FE8927 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		EEDA2145263074F200FE8927 /* LocationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,8 @@
 				EEC6F793262CB7740014B053 /* Font */,
 				EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */,
 				EEDA213526305D1000FE8927 /* Constants.swift */,
+				EEDA2138263068AF00FE8927 /* Colors.xcassets */,
+				EEDA213B263068BA00FE8927 /* Colors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -137,6 +149,7 @@
 		EEC6F783262B66380014B053 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				EEDA213E263071BB00FE8927 /* Location */,
 				EEC6F786262B66570014B053 /* Budget */,
 			);
 			path = Cell;
@@ -145,6 +158,7 @@
 		EEC6F784262B663C0014B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEDA2145263074F200FE8927 /* LocationCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +188,15 @@
 				EEC6F794262CB7920014B053 /* Roboto-Light.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		EEDA213E263071BB00FE8927 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EEDA213F263071DB00FE8927 /* LocationTableViewCell.swift */,
+				EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +258,11 @@
 			files = (
 				EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */,
 				EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */,
+				EEDA2142263071DB00FE8927 /* LocationTableViewCell.xib in Resources */,
 				EEC6F795262CB7920014B053 /* Roboto-Light.ttf in Resources */,
 				EEC6F798262CB81E0014B053 /* Roboto-Medium.ttf in Resources */,
 				EEC6F78A262B668B0014B053 /* BudgetTableViewCell.xib in Resources */,
+				EEDA2139263068AF00FE8927 /* Colors.xcassets in Resources */,
 				EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */,
 				EEC6F790262C49AB0014B053 /* CreateBudgetViewController.xib in Resources */,
 			);
@@ -252,10 +277,13 @@
 			files = (
 				EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */,
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
+				EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */,
 				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
+				EEDA213C263068BA00FE8927 /* Colors.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
 				EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */,
 				EEDA213626305D1000FE8927 /* Constants.swift in Sources */,
+				EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

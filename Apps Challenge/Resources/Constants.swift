@@ -28,10 +28,12 @@ struct Constants {
     
     struct Nib {
         static let BudgetCell: UINib = UINib(nibName: "BudgetTableViewCell", bundle: nil)
+        static let LocationCell: UINib = UINib(nibName: "LocationTableViewCell", bundle: nil)
     }
     
     struct Identifier {
         static let BudgetID = "BudgetCellID"
+        static let LocationID = "LocationCellID"
     }
     
     struct Image {
