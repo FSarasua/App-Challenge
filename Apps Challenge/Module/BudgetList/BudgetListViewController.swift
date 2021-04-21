@@ -22,22 +22,15 @@ class BudgetListViewController: UIViewController {
         self.loadStyle()
     }
     
-    //MARK: - Private Method's
-    
+    //MARK: - Private Methods
     private func loadData() {
-        // TableView
-        // TODO: Constants
-        // TODO: UINib
-        let budgetNib = UINib(nibName: "BudgetTableViewCell", bundle: nil)
-        
-        self.tableView.register(budgetNib, forCellReuseIdentifier: "BudgetCellID")
+        // TableView        
+        self.tableView.register(Constants.Nib.BudgetCell, forCellReuseIdentifier: Constants.Identifier.BudgetID)
         
         self.tableView.dataSource = self
-        self.tableView.delegate = self
         
         // NavigationBar
-        // TODO: Constants
-        self.title = "Presupuestos"
+        self.title = Constants.Module.BudgetList.title
         self.createAddButton()
     }
     
@@ -45,19 +38,17 @@ class BudgetListViewController: UIViewController {
         self.transparentNavigationBar()
     }
     
-    func transparentNavigationBar() {
+    private func transparentNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
     }
     
-    func createAddButton() {
+    private func createAddButton() {
         let addButton = UIButton(type: .custom)
-        // TODO: UIImage
-        let image = UIImage(named: "plus1")
         
-        addButton.setImage(image, for: .normal)
+        addButton.setImage(Constants.Image.addImage, for: .normal)
         addButton.addTarget(self, action: #selector(goToCreateBudget), for: .touchUpInside)
         
         addButton.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +58,7 @@ class BudgetListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView:  addButton)
     }
     
+    // MARK: - Actions
     @objc func goToCreateBudget() {
         self.navigationController?.pushViewController(CreateBudgetViewController(), animated: true)
     }
@@ -80,18 +72,11 @@ extension BudgetListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Constants
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:  "BudgetCellID") else {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:  Constants.Identifier.BudgetID) else {
             return UITableViewCell()
         }
         
         return cell
-    }
-}
-
-extension BudgetListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
     }
 }

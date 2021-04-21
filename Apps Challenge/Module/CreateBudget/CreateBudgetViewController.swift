@@ -129,8 +129,7 @@ class CreateBudgetViewController: UIViewController {
     }
     
     private func animatePickerView(hidden: Bool) {
-        // TODO: Constants
-        self.bottomPickerView.constant = hidden ? -250 : 0
+        self.bottomPickerView.constant = hidden ? Constants.Constraints.hideBottomPickerValue : Constants.Constraints.showBottomPickerValue
         self.isVisiblePicker = hidden
         
         UIView.animate(withDuration: 0.4) {
