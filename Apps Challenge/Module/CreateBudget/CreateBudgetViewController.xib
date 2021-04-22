@@ -18,7 +18,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateBudgetViewController" customModule="Apps_Challenge" customModuleProvider="target">
             <connections>
-                <outlet property="bottomPickerView" destination="1gj-Xf-6BJ" id="BTg-53-frK"/>
                 <outlet property="heightTableView" destination="he6-Ik-9NJ" id="vsM-c6-mMR"/>
                 <outlet property="lbCategory" destination="Mj9-iI-vVJ" id="TO0-UP-F3q"/>
                 <outlet property="lbDescription" destination="Iic-EH-8pd" id="3or-h4-z5s"/>
@@ -186,21 +185,13 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="lt7-dP-ma2"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="JlH-pd-3Xx"/>
                 </scrollView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGo-Lb-Bqn">
-                    <rect key="frame" x="0.0" y="922" width="414" height="224"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </pickerView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="sGo-Lb-Bqn" secondAttribute="bottom" constant="-250" id="1gj-Xf-6BJ"/>
                 <constraint firstItem="R9k-hl-fqU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2O8-QS-Ptz"/>
-                <constraint firstItem="sGo-Lb-Bqn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5na-v2-pWa"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="K8X-gW-2V8"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sGo-Lb-Bqn" secondAttribute="trailing" id="YnF-kY-P4J"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="top" secondItem="ZZS-ZZ-Ucw" secondAttribute="bottom" constant="8" id="eBm-UH-TTG"/>
-                <constraint firstItem="sGo-Lb-Bqn" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="kWC-uB-IoX"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="mbW-Ig-mus"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="nge-7g-25B"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="pe4-fU-3T2"/>
@@ -208,6 +199,11 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
+        <pickerView contentMode="scaleToFill" id="sGo-Lb-Bqn">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <point key="canvasLocation" x="137.68115942028987" y="609.70982142857144"/>
+        </pickerView>
     </objects>
     <resources>
         <systemColor name="systemOrangeColor">

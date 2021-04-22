@@ -51,12 +51,11 @@ class CreateBudgetViewController: UIViewController {
     
     //MARK: - Constraint
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
-    @IBOutlet weak var bottomPickerView: NSLayoutConstraint!
     
     //MARK: - Variable
     var keyboardActive: Bool = false
-    var isVisiblePicker: Bool = true
-    var selectedTextField: UIView? = nil
+    var pickerActive: Bool = false
+    var selectedTextField = UITextField()
     
     let countries: [String] = ["España", "Francia", "Italia", "Alemania", "China"]
     var suppContries: [String] = []
@@ -108,9 +107,11 @@ class CreateBudgetViewController: UIViewController {
         
         // Text Field Category
         self.tfCategory.delegate = self
+        self.tfCategory.inputView = self.pickerView
         
         // Text Field Sub-Category
         self.tfSubcategory.delegate = self
+        self.tfSubcategory.inputView = self.pickerView
         
         // Table View
         self.tableViewLocation.dataSource = self
@@ -123,52 +124,32 @@ class CreateBudgetViewController: UIViewController {
     }
     
     private func loadStyle() {
-        // Text Field Category
-        self.tfCategory.inputView = UIView()
         
-        // Text Field Sub-Category
-        self.tfSubcategory.inputView = UIView()
-    }
-    
-    private func animatePickerView(hidden: Bool) {
-        self.bottomPickerView.constant = hidden ? Constants.Constraints.hideBottomPickerValue : Constants.Constraints.showBottomPickerValue
-        self.isVisiblePicker = hidden
-        
-        UIView.animate(withDuration: 0.4) {
-            self.view.layoutIfNeeded()
-        }
     }
     
     private func touchLocation() {
         self.tableViewLocation.isHidden = !self.tableViewLocation.isHidden || self.tableData.isEmpty
+        self.editingChanged(self.selectedTextField)
     }
     
     private func touchCategories() {
-        
-        guard let textField = self.selectedTextField else { return }
-        
         self.loadPickerData()
         self.pickerView.reloadAllComponents()
         
-        UIView.animate(withDuration: 0.4) {
-            self.scrollView.contentSize.height = self.scrollView.contentSize.height + self.pickerView.frame.size.height
-        }
-        self.scrollView.scrollToView(view: textField, animated: true)
-        self.animatePickerView(hidden: !self.isVisiblePicker)
+        // Siempre para category y subcategory
+        self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
     }
     
     private func loadPickerData() {
         
-        if self.selectedTextField == self.tfCategory {
+        if self.pickertState == .category {
             self.pickerData = self.numbers.map({ String($0) })
-            self.pickertState = .category
         } else {
             
             guard let text = self.tfCategory.text, let index = Int(text) else {
                 return
             }
             self.pickerData = self.decimals[index]?.compactMap({ String($0) }) ?? []
-            self.pickertState = .subcategory
         }
     }
     
@@ -199,7 +180,6 @@ class CreateBudgetViewController: UIViewController {
     }
     
     //MARK: - Actions
-    
     @objc func editingChanged(_ textField: UITextField) {
         
         guard let text = textField.text else {
@@ -223,13 +203,6 @@ class CreateBudgetViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         self.tableViewLocation.isHidden = true
-        
-        if !self.isVisiblePicker {
-            UIView.animate(withDuration: 0.4) {
-                self.scrollView.contentSize.height = self.scrollView.contentSize.height - self.pickerView.frame.size.height
-            }
-            self.animatePickerView(hidden: true)
-        }
         self.view.endEditing(true)
     }
 }
@@ -252,7 +225,7 @@ extension UIScrollView {
 
         if let origin = view.superview {
             let childStartPoint = origin.convert(view.frame.origin, to: self)
-            self.scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y - 100, width: 1, height: self.frame.height), animated: animated)
+            self.scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y, width: 1, height: self.frame.height), animated: animated)
         }
     }
 }
@@ -268,21 +241,26 @@ extension CreateBudgetViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.selectedTextField = textField
         
-        if textField == self.tfCategory || textField == self.tfSubcategory {
-            self.touchCategories()
-        } else if textField == self.tfLocation {
+        if textField == self.tfLocation {
             self.touchLocation()
+        } else if textField == self.tfCategory || textField == self.tfSubcategory {
+            self.pickertState = textField == self.tfCategory ? .category : .subcategory
+            self.touchCategories()
+        }
+        
+        if self.keyboardActive {
+            self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
         }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
                
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, !self.keyboardActive, let view = self.selectedTextField else {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, !self.keyboardActive else {
             return
         }
         self.keyboardActive = true
         self.scrollView.contentSize.height += keyboardSize.height
-        self.scrollView.scrollToView(view: view, animated: false)
+        self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
