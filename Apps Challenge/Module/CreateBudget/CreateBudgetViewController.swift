@@ -135,8 +135,6 @@ class CreateBudgetViewController: UIViewController {
     private func touchCategories() {
         self.loadPickerData()
         self.pickerView.reloadAllComponents()
-        
-        // Siempre para category y subcategory
         self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
     }
     
