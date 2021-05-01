@@ -13,7 +13,7 @@ class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var topViewBackground: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewBackground: NSLayoutConstraint!
     
     // MARK: - Variable
     var data: LocationCellModel = LocationCellModel()
@@ -27,7 +27,7 @@ class LocationTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.topViewBackground.constant = 0
+        self.bottomViewBackground.constant = 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,8 +43,8 @@ class LocationTableViewCell: UITableViewCell {
     private func loadData() {
         self.lbTitle.text = self.data.title
         
-        if self.data.isFirstItem {
-            self.topViewBackground.constant = 2
+        if self.data.isLastItem {
+            self.bottomViewBackground.constant = 0
         }
     }
 }

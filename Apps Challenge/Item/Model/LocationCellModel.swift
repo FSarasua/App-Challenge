@@ -10,15 +10,15 @@ import Foundation
 class LocationCellModel {
     
     var title: String
-    var isFirstItem: Bool
+    var isLastItem: Bool
     
     init() {
         self.title = ""
-        self.isFirstItem = false
+        self.isLastItem = false
     }
     
-    init(title: String, isFirstItem: Bool, isLastItem: Bool) {
+    init(title: String, isLastItem: Bool) {
         self.title = title
-        self.isFirstItem = isFirstItem
+        self.isLastItem = isLastItem
     }
 }

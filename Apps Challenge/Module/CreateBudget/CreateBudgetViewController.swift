@@ -14,7 +14,7 @@ class CreateBudgetViewController: UIViewController {
         case subcategory
     }
 
-    //MARK: - IBOutlet
+    //MARK: - Components
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewContent: UIView!
     
@@ -47,7 +47,7 @@ class CreateBudgetViewController: UIViewController {
     @IBOutlet weak var lbSubcategory: UILabel!
     @IBOutlet weak var tfSubcategory: UITextField!
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    let pickerView: UIPickerView = UIPickerView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height / 2.59)))
     
     //MARK: - Constraint
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
@@ -80,7 +80,7 @@ class CreateBudgetViewController: UIViewController {
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
         
-//         Notification Center to configure show / hide keyboard
+//      Notification Center to configure show / hide keyboard
         let notificationCenter = NotificationCenter.default
 
         notificationCenter.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -88,6 +88,33 @@ class CreateBudgetViewController: UIViewController {
 
         notificationCenter.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Toolbar Picker View
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.pickerView.frame.width, height: 44.0))
+        
+        toolBar.autoresizingMask = .flexibleHeight
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = false
+        toolBar.isUserInteractionEnabled = true
+        toolBar.tintColor = .systemBlue
+        toolBar.barTintColor = .systemGray5
+
+        let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDonePicker))
+        let btnSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let btnCancel = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissKeyboard))
+
+        toolBar.items = [btnCancel, btnSpace, btnDone]
+        
+        // Navigation Bar
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDone))
+        
+        doneBarButton.tintColor = .systemBlue
+        
+        self.navigationItem.rightBarButtonItem = doneBarButton
+
+        // Picker View
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
         
         // Text Field Name
         self.tfName.delegate = self
@@ -108,34 +135,42 @@ class CreateBudgetViewController: UIViewController {
         // Text Field Category
         self.tfCategory.delegate = self
         self.tfCategory.inputView = self.pickerView
+        self.tfCategory.inputAccessoryView = toolBar
+        
+        // Label Sub-Category
+        self.lbSubcategory.isHidden = true
         
         // Text Field Sub-Category
         self.tfSubcategory.delegate = self
         self.tfSubcategory.inputView = self.pickerView
+        self.tfSubcategory.inputAccessoryView = toolBar
+        self.tfSubcategory.isHidden = true
         
         // Table View
         self.tableViewLocation.dataSource = self
         self.tableViewLocation.delegate = self
         self.tableViewLocation.register(Constants.Nib.LocationCell, forCellReuseIdentifier: Constants.Identifier.LocationID)
         
-        // Picker View
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
+        // Constraints
+        self.heightTableView.constant = 0.0
     }
     
     private func loadStyle() {
-        
+        self.tableViewLocation.layer.borderWidth = 2.0
+        self.tableViewLocation.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     private func touchLocation() {
-        self.tableViewLocation.isHidden = !self.tableViewLocation.isHidden || self.tableData.isEmpty
         self.editingChanged(self.selectedTextField)
     }
     
     private func touchCategories() {
         self.loadPickerData()
         self.pickerView.reloadAllComponents()
-        self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
+        
+        let text = self.selectedTextField.text ?? ""
+        let index = self.pickerData.firstIndex(of: text) ?? 0
+        self.pickerView.selectRow(index, inComponent: 0, animated: false)
     }
     
     private func loadPickerData() {
@@ -145,6 +180,7 @@ class CreateBudgetViewController: UIViewController {
         } else {
             
             guard let text = self.tfCategory.text, let index = Int(text) else {
+                self.pickerData = []
                 return
             }
             self.pickerData = self.decimals[index]?.compactMap({ String($0) }) ?? []
@@ -170,10 +206,25 @@ class CreateBudgetViewController: UIViewController {
             
             data.title = country
             
-            if country == self.suppContries.first {
-                data.isFirstItem = true
+            if country == self.suppContries.last {
+                data.isLastItem = true
             }
             self.tableData.append(data)
+        }
+    }
+    
+    private func loadTableHeight(with value: CGFloat? = nil) {
+        var newHeight: CGFloat = 135.0
+        
+        if let height = value {
+            newHeight = height
+        } else if tableData.count <= 2 {
+            newHeight = CGFloat(self.tableData.count * 45)
+        }
+        self.heightTableView.constant = newHeight
+        
+        UIView.animate(withDuration: 0) {
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -186,22 +237,72 @@ class CreateBudgetViewController: UIViewController {
         self.filterCountriesWith(text: text)
         self.loadTableData()
         
-        self.tableViewLocation.isHidden = self.tableData.isEmpty
-        
-        if !self.tableData.isEmpty {
-            
-            if tableData.count > 2 {
-                self.heightTableView.constant = 135
-            } else {
-                self.heightTableView.constant = CGFloat(self.tableData.count * 45)
-            }
+        if self.tableData.isEmpty {
+            self.loadTableHeight(with: 0.0)
+        } else {
+            self.loadTableHeight()
             self.tableViewLocation.reloadData()
+            self.tableViewLocation.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
         }
     }
     
     @objc func dismissKeyboard() {
-        self.tableViewLocation.isHidden = true
+        self.loadTableHeight(with: 0.0)
         self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        if !self.keyboardActive {
+            self.keyboardActive = true
+            self.scrollView.contentSize.height += UIScreen.main.bounds.size.height / 2.59
+            
+            switch self.selectedTextField {
+            case self.tfLocation:
+                self.scrollView.scrollToPresentView(view: self.tableViewLocation, hasToolBar: false, animated: true)
+                break
+            case self.tfCategory, self.tfSubcategory:
+                self.scrollView.scrollToPresentView(view: self.selectedTextField, hasToolBar: true, animated: true)
+                break
+            default:
+                self.scrollView.scrollToPresentView(view: self.selectedTextField, hasToolBar: false, animated: true)
+                break
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        if self.keyboardActive {
+            self.keyboardActive = false
+            self.scrollView.contentSize.height -= UIScreen.main.bounds.size.height / 2.59
+        }
+    }
+    
+    @objc func tapDonePicker() {
+        self.dismissKeyboard()
+        
+        guard let text = self.pickerView(self.pickerView, titleForRow: self.pickerView.selectedRow(inComponent: 0), forComponent: 0) else {
+
+            return
+        }
+        
+        if self.pickertState == .category {
+            self.tfCategory.text = text
+            
+            if self.tfSubcategory.isHidden && self.tfCategory.text != "" {
+                self.lbSubcategory.isHidden = false
+                self.tfSubcategory.isHidden = false
+            } else {
+                self.tfSubcategory.text?.removeAll()
+            }
+        } else {
+            self.tfSubcategory.text = text
+        }
+    }
+    
+    @objc func tapDone() {
+        // Save the new budget
     }
 }
 
@@ -219,11 +320,25 @@ extension CreateBudgetViewController: UIGestureRecognizerDelegate {
 
 extension UIScrollView {
     
-    func scrollToView(view: UIView, animated: Bool) {
+    func scrollToPresentView(view: UIView, hasToolBar: Bool, animated: Bool) {
 
         if let origin = view.superview {
-            let childStartPoint = origin.convert(view.frame.origin, to: self)
-            self.scrollRectToVisible(CGRect(x: 0, y: childStartPoint.y, width: 1, height: self.frame.height), animated: animated)
+            var newYPosition = CGPoint(x: 0, y: 0)
+            let startPointY = origin.convert(view.frame.origin, to: self).y
+            var keyboardHeight = UIScreen.main.bounds.size.height / 2.59
+            keyboardHeight += hasToolBar ? 44.0 : 0
+            let extraMargin: CGFloat = 16.0
+            
+            let restFrameY = self.frame.height - keyboardHeight
+            
+            if startPointY + view.frame.height + extraMargin > restFrameY {
+                newYPosition = CGPoint(x: self.contentOffset.x, y: startPointY + view.frame.height + extraMargin - restFrameY )
+            }
+            
+            UIView.animate(withDuration: 0.6) {
+                self.contentOffset = newYPosition
+                self.layoutIfNeeded()
+            }
         }
     }
 }
@@ -231,7 +346,26 @@ extension UIScrollView {
 extension CreateBudgetViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        
+        if textField == self.tfName {
+            self.tfPhone.becomeFirstResponder()
+        } else if textField == self.tfPhone {
+            self.tfEmail.becomeFirstResponder()
+        } else if textField == self.tfEmail {
+            self.tfDescription.becomeFirstResponder()
+        } else if textField == self.tfDescription {
+            self.tfLocation.becomeFirstResponder()
+        } else if textField == self.tfLocation {
+            self.loadTableHeight(with: 0.0)
+            self.tfCategory.becomeFirstResponder()
+        }
+        
+        // TODO: Those components hasn't "intro" key to return. We have to control this by other way.
+//        else if textField == self.tfCategory {
+//            self.tfSubcategory.becomeFirstResponder()
+//        } else if textField == self.tfSubcategory {
+//            self.view.endEditing(true)
+//        }
         
         return false
     }
@@ -241,33 +375,29 @@ extension CreateBudgetViewController: UITextFieldDelegate {
         
         if textField == self.tfLocation {
             self.touchLocation()
-        } else if textField == self.tfCategory || textField == self.tfSubcategory {
-            self.pickertState = textField == self.tfCategory ? .category : .subcategory
-            self.touchCategories()
+        } else {
+            self.loadTableHeight(with: 0.0)
+            
+            if textField == self.tfCategory || textField == self.tfSubcategory {
+                self.pickertState = textField == self.tfCategory ? .category : .subcategory
+                self.touchCategories()
+            }
         }
         
         if self.keyboardActive {
-            self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
+            
+            switch textField {
+            case self.tfLocation:
+                self.scrollView.scrollToPresentView(view: self.tableViewLocation, hasToolBar: false, animated: true)
+                break
+            case self.tfCategory, self.tfSubcategory:
+                self.scrollView.scrollToPresentView(view: textField, hasToolBar: true, animated: true)
+                break
+            default:
+                self.scrollView.scrollToPresentView(view: textField, hasToolBar: false, animated: true)
+                break
+            }
         }
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-               
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, !self.keyboardActive else {
-            return
-        }
-        self.keyboardActive = true
-        self.scrollView.contentSize.height += keyboardSize.height
-        self.scrollView.scrollToView(view: self.selectedTextField, animated: true)
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, self.keyboardActive else {
-            return
-        }
-        self.keyboardActive = false
-        self.scrollView.contentSize.height -= keyboardSize.height
     }
 }
 
@@ -305,6 +435,7 @@ extension CreateBudgetViewController: UITableViewDelegate {
 }
 
 extension CreateBudgetViewController: UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 1
@@ -327,12 +458,5 @@ extension CreateBudgetViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if self.pickertState == .category {
-            self.tfCategory.text = self.pickerData[row]
-            self.tfSubcategory.text?.removeAll()
-        } else {
-            self.tfSubcategory.text = self.pickerData[row]
-        }
-        self.dismissKeyboard()
     }
 }

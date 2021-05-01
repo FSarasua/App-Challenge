@@ -48,7 +48,7 @@ class BudgetListViewController: UIViewController {
     private func createAddButton() {
         let addButton = UIButton(type: .custom)
         
-        addButton.setImage(Constants.Image.addImage, for: .normal)
+        addButton.setImage(#imageLiteral(resourceName: "addImage"), for: .normal)
         addButton.addTarget(self, action: #selector(goToCreateBudget), for: .touchUpInside)
         
         addButton.translatesAutoresizingMaskIntoConstraints = false

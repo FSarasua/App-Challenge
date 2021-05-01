@@ -36,10 +36,6 @@ struct Constants {
         static let LocationID = "LocationCellID"
     }
     
-    struct Image {
-        static let addImage = UIImage(named: "addImage")
-    }
-    
     struct Endpoint {
         static let location = "location/list"
         static let category = "category/list/"

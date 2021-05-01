@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68M-9Y-hcG">
-                        <rect key="frame" x="2" y="0.0" width="316" height="42"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
                         <color key="backgroundColor" name="Gray01"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP7-71-p00">
@@ -39,16 +39,16 @@
                     <constraint firstItem="qP7-71-p00" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AS9-dP-DUb"/>
                     <constraint firstItem="68M-9Y-hcG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QtH-9M-Rw1"/>
                     <constraint firstAttribute="bottom" secondItem="68M-9Y-hcG" secondAttribute="bottom" constant="2" id="TzA-Kh-DsG"/>
-                    <constraint firstAttribute="trailing" secondItem="68M-9Y-hcG" secondAttribute="trailing" constant="2" id="fEo-MP-Hnk"/>
+                    <constraint firstAttribute="trailing" secondItem="68M-9Y-hcG" secondAttribute="trailing" id="fEo-MP-Hnk"/>
                     <constraint firstItem="qP7-71-p00" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fnp-tV-ahl"/>
-                    <constraint firstItem="68M-9Y-hcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="tpT-xb-x7M"/>
+                    <constraint firstItem="68M-9Y-hcG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tpT-xb-x7M"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="bottomViewBackground" destination="TzA-Kh-DsG" id="nJ2-aV-5w4"/>
                 <outlet property="lbTitle" destination="qP7-71-p00" id="510-NX-cBr"/>
-                <outlet property="topViewBackground" destination="QtH-9M-Rw1" id="5f3-FA-dKI"/>
                 <outlet property="viewBackground" destination="68M-9Y-hcG" id="jpW-ns-wLf"/>
             </connections>
             <point key="canvasLocation" x="139" y="125"/>

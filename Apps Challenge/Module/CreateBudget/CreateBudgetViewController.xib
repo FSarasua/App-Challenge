@@ -28,7 +28,6 @@
                 <outlet property="lbSubcategory" destination="Jxc-Es-TK9" id="l3n-8y-fqZ"/>
                 <outlet property="lbTitle" destination="ZZS-ZZ-Ucw" id="XDk-th-lGO"/>
                 <outlet property="marginView" destination="8LZ-po-thd" id="pcf-G7-XwM"/>
-                <outlet property="pickerView" destination="sGo-Lb-Bqn" id="AMS-Z8-qfK"/>
                 <outlet property="scrollView" destination="KFO-5c-LcO" id="4v6-od-2v0"/>
                 <outlet property="scrollViewContent" destination="R9k-hl-fqU" id="42e-MV-SUU"/>
                 <outlet property="stackView" destination="kUC-0L-zr7" id="GT9-b1-7fd"/>
@@ -55,16 +54,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-5c-LcO">
-                    <rect key="frame" x="0.0" y="103.5" width="414" height="758.5"/>
+                    <rect key="frame" x="0.0" y="111.5" width="414" height="784.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9k-hl-fqU" userLabel="Content Scroll View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="650"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LZ-po-thd" userLabel="Margin View">
-                                    <rect key="frame" x="40" y="16" width="334" height="634"/>
+                                    <rect key="frame" x="40" y="16" width="334" height="586"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kUC-0L-zr7">
-                                            <rect key="frame" x="0.0" y="8" width="334" height="586"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="334" height="586"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOMBRE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQY-Ke-AVt">
                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="20"/>
@@ -146,8 +145,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
-                                        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6Z-IG-Pgs">
-                                            <rect key="frame" x="5" y="422" width="324" height="120"/>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6Z-IG-Pgs">
+                                            <rect key="frame" x="5" y="414" width="324" height="120"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="120" id="he6-Ik-9NJ"/>
@@ -161,8 +160,8 @@
                                         <constraint firstItem="Lm5-XB-qos" firstAttribute="trailing" secondItem="S6Z-IG-Pgs" secondAttribute="trailing" constant="5" id="RFY-fa-o0b"/>
                                         <constraint firstItem="S6Z-IG-Pgs" firstAttribute="leading" secondItem="Lm5-XB-qos" secondAttribute="leading" constant="5" id="XqM-gA-W9Z"/>
                                         <constraint firstItem="kUC-0L-zr7" firstAttribute="leading" secondItem="8LZ-po-thd" secondAttribute="leading" id="dGp-Vt-BVP"/>
-                                        <constraint firstItem="kUC-0L-zr7" firstAttribute="top" secondItem="8LZ-po-thd" secondAttribute="top" constant="8" id="omo-CY-Htd"/>
-                                        <constraint firstAttribute="bottom" secondItem="kUC-0L-zr7" secondAttribute="bottom" constant="40" id="ucG-v1-ZUj"/>
+                                        <constraint firstItem="kUC-0L-zr7" firstAttribute="top" secondItem="8LZ-po-thd" secondAttribute="top" id="omo-CY-Htd"/>
+                                        <constraint firstAttribute="bottom" secondItem="kUC-0L-zr7" secondAttribute="bottom" id="ucG-v1-ZUj"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -170,7 +169,7 @@
                             <constraints>
                                 <constraint firstItem="8LZ-po-thd" firstAttribute="top" secondItem="R9k-hl-fqU" secondAttribute="top" constant="16" id="3Nb-NK-Mox"/>
                                 <constraint firstItem="8LZ-po-thd" firstAttribute="leading" secondItem="R9k-hl-fqU" secondAttribute="leading" constant="40" id="DuB-ZM-19G"/>
-                                <constraint firstAttribute="bottom" secondItem="8LZ-po-thd" secondAttribute="bottom" id="OWA-R4-TK1"/>
+                                <constraint firstAttribute="bottom" secondItem="8LZ-po-thd" secondAttribute="bottom" constant="10" id="OWA-R4-TK1"/>
                                 <constraint firstAttribute="trailing" secondItem="8LZ-po-thd" secondAttribute="trailing" constant="40" id="qAR-3d-9x8"/>
                             </constraints>
                         </view>
@@ -190,8 +189,8 @@
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
                 <constraint firstItem="R9k-hl-fqU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2O8-QS-Ptz"/>
-                <constraint firstItem="KFO-5c-LcO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="K8X-gW-2V8"/>
-                <constraint firstItem="KFO-5c-LcO" firstAttribute="top" secondItem="ZZS-ZZ-Ucw" secondAttribute="bottom" constant="8" id="eBm-UH-TTG"/>
+                <constraint firstItem="KFO-5c-LcO" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="K8X-gW-2V8"/>
+                <constraint firstItem="KFO-5c-LcO" firstAttribute="top" secondItem="ZZS-ZZ-Ucw" secondAttribute="bottom" constant="16" id="eBm-UH-TTG"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="mbW-Ig-mus"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="nge-7g-25B"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="pe4-fU-3T2"/>
@@ -199,11 +198,6 @@
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
-        <pickerView contentMode="scaleToFill" id="sGo-Lb-Bqn">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <point key="canvasLocation" x="137.68115942028987" y="609.70982142857144"/>
-        </pickerView>
     </objects>
     <resources>
         <systemColor name="systemOrangeColor">
