@@ -19,6 +19,11 @@ struct Constants {
         struct BudgetList {
             static let title = "Presupuestos"
         }
+        
+        struct CreateBudget {
+            static let requiredPlaceholder = "Requiere una categoría."
+            static let chooseSubCatPlaceholder = "Elija una sub-categoría."
+        }
     }
     
     struct Constraints {
@@ -39,5 +44,9 @@ struct Constants {
     struct Endpoint {
         static let location = "location/list"
         static let category = "category/list/"
+    }
+    
+    struct Database {
+        static let name = "Apps_Challenge"
     }
 }

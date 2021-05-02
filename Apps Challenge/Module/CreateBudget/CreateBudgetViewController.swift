@@ -18,8 +18,6 @@ class CreateBudgetViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewContent: UIView!
     
-    @IBOutlet weak var marginView: UIView!
-    
     @IBOutlet weak var lbTitle: UILabel!
     
     @IBOutlet weak var stackView: UIStackView!
@@ -54,7 +52,6 @@ class CreateBudgetViewController: UIViewController {
     
     //MARK: - Variable
     var keyboardActive: Bool = false
-    var pickerActive: Bool = false
     var selectedTextField = UITextField()
     
     let countries: [String] = ["España", "Francia", "Italia", "Alemania", "China"]
@@ -75,12 +72,13 @@ class CreateBudgetViewController: UIViewController {
     
     // MARK: - Private method
     private func loadData() {
-        // Gesture Recognizer to hide keyboard
+        
+        // Gesture Recognizer to hide keyboard.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
         
-//      Notification Center to configure show / hide keyboard
+        // Notification Center to control show / hide keyboard.
         let notificationCenter = NotificationCenter.default
 
         notificationCenter.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -89,14 +87,24 @@ class CreateBudgetViewController: UIViewController {
         notificationCenter.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        // Toolbar Picker View
+        // Navigation Bar
+        self.createAddBarButton()
+        
+        // Table View
+        self.tableViewLocation.register(Constants.Nib.LocationCell, forCellReuseIdentifier: Constants.Identifier.LocationID)
+        
+        // Picker View
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        
+        // Toolbar Picker View.
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.pickerView.frame.width, height: 44.0))
         
         toolBar.autoresizingMask = .flexibleHeight
         toolBar.barStyle = .default
         toolBar.isTranslucent = false
         toolBar.isUserInteractionEnabled = true
-        toolBar.tintColor = .systemBlue
+        toolBar.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         toolBar.barTintColor = .systemGray5
 
         let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDonePicker))
@@ -105,65 +113,47 @@ class CreateBudgetViewController: UIViewController {
 
         toolBar.items = [btnCancel, btnSpace, btnDone]
         
-        // Navigation Bar
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDone))
-        
-        doneBarButton.tintColor = .systemBlue
-        
-        self.navigationItem.rightBarButtonItem = doneBarButton
-
-        // Picker View
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
-        
-        // Text Field Name
-        self.tfName.delegate = self
-        
-        // Text Field Phone
-        self.tfPhone.delegate = self
-        
-        // Text Field E-mail
-        self.tfEmail.delegate = self
-        
-        // Text Field Description
-        self.tfDescription.delegate = self
-        
-        // Text Field Location
-        self.tfLocation.delegate = self
-        self.tfLocation.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
-        
         // Text Field Category
-        self.tfCategory.delegate = self
         self.tfCategory.inputView = self.pickerView
         self.tfCategory.inputAccessoryView = toolBar
         
-        // Label Sub-Category
-        self.lbSubcategory.isHidden = true
-        
         // Text Field Sub-Category
-        self.tfSubcategory.delegate = self
+        self.tfSubcategory.placeholder = Constants.Module.CreateBudget.requiredPlaceholder
         self.tfSubcategory.inputView = self.pickerView
         self.tfSubcategory.inputAccessoryView = toolBar
-        self.tfSubcategory.isHidden = true
-        
-        // Table View
-        self.tableViewLocation.dataSource = self
-        self.tableViewLocation.delegate = self
-        self.tableViewLocation.register(Constants.Nib.LocationCell, forCellReuseIdentifier: Constants.Identifier.LocationID)
         
         // Constraints
         self.heightTableView.constant = 0.0
     }
     
     private func loadStyle() {
+        
+        // Label Sub-Category
+        self.lbSubcategory.isUserInteractionEnabled = false
+        self.lbSubcategory.alpha = 0.6
+        
+        // Text Field Sub-Category
+        self.tfSubcategory.isUserInteractionEnabled = false
+        self.tfSubcategory.alpha = 0.6
+        
+        // Table View
         self.tableViewLocation.layer.borderWidth = 2.0
         self.tableViewLocation.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    private func createAddBarButton() {
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDone))
+        
+        doneBarButton.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        
+        self.navigationItem.rightBarButtonItem = doneBarButton
     }
     
     private func touchLocation() {
         self.editingChanged(self.selectedTextField)
     }
     
+    // TODO: Refactor.
     private func touchCategories() {
         self.loadPickerData()
         self.pickerView.reloadAllComponents()
@@ -173,6 +163,7 @@ class CreateBudgetViewController: UIViewController {
         self.pickerView.selectRow(index, inComponent: 0, animated: false)
     }
     
+    // TODO: Refactor Structure. Presenter.
     private func loadPickerData() {
         
         if self.pickertState == .category {
@@ -187,7 +178,7 @@ class CreateBudgetViewController: UIViewController {
         }
     }
     
-    // TODO: Refactor table view logic.
+    // TODO: Refactor Structure. Presenter.
     private func filterCountriesWith(text: String) {
         self.tableData.removeAll()
         
@@ -198,6 +189,7 @@ class CreateBudgetViewController: UIViewController {
         }
     }
     
+    // TODO: Refactor Structure. Presenter.
     private func loadTableData() {
         self.tableData = []
         
@@ -213,7 +205,8 @@ class CreateBudgetViewController: UIViewController {
         }
     }
     
-    private func loadTableHeight(with value: CGFloat? = nil) {
+    // TODO: Refactor.
+    private func loadTableHeight(value: CGFloat? = nil) {
         var newHeight: CGFloat = 135.0
         
         if let height = value {
@@ -229,7 +222,7 @@ class CreateBudgetViewController: UIViewController {
     }
     
     //MARK: - Actions
-    @objc func editingChanged(_ textField: UITextField) {
+    @IBAction func editingChanged(_ textField: UITextField) {
         
         guard let text = textField.text else {
             return
@@ -238,7 +231,7 @@ class CreateBudgetViewController: UIViewController {
         self.loadTableData()
         
         if self.tableData.isEmpty {
-            self.loadTableHeight(with: 0.0)
+            self.loadTableHeight(value: 0.0)
         } else {
             self.loadTableHeight()
             self.tableViewLocation.reloadData()
@@ -247,19 +240,24 @@ class CreateBudgetViewController: UIViewController {
     }
     
     @objc func dismissKeyboard() {
-        self.loadTableHeight(with: 0.0)
         self.view.endEditing(true)
+        self.loadTableHeight(value: 0.0)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if !self.keyboardActive {
             self.keyboardActive = true
-            self.scrollView.contentSize.height += UIScreen.main.bounds.size.height / 2.59
+            self.scrollView.contentSize.height += (UIScreen.main.bounds.size.height / 2.59)
             
             switch self.selectedTextField {
             case self.tfLocation:
-                self.scrollView.scrollToPresentView(view: self.tableViewLocation, hasToolBar: false, animated: true)
+                guard let spaceViewToPresent = self.tableViewLocation else { return }
+                
+                let tableViewTotal = CGRect(x: self.tableViewLocation.frame.origin.x, y: self.tableViewLocation.frame.origin.y, width: self.tableViewLocation.frame.size.width, height: 135.0)
+                spaceViewToPresent.frame = tableViewTotal
+                
+                self.scrollView.scrollToPresentView(view: spaceViewToPresent, hasToolBar: false, animated: true)
                 break
             case self.tfCategory, self.tfSubcategory:
                 self.scrollView.scrollToPresentView(view: self.selectedTextField, hasToolBar: true, animated: true)
@@ -275,7 +273,7 @@ class CreateBudgetViewController: UIViewController {
         
         if self.keyboardActive {
             self.keyboardActive = false
-            self.scrollView.contentSize.height -= UIScreen.main.bounds.size.height / 2.59
+            self.scrollView.contentSize.height -= (UIScreen.main.bounds.size.height / 2.59)
         }
     }
     
@@ -290,9 +288,13 @@ class CreateBudgetViewController: UIViewController {
         if self.pickertState == .category {
             self.tfCategory.text = text
             
-            if self.tfSubcategory.isHidden && self.tfCategory.text != "" {
-                self.lbSubcategory.isHidden = false
-                self.tfSubcategory.isHidden = false
+            if self.tfCategory.text != "" {
+                self.lbSubcategory.isUserInteractionEnabled = true
+                self.lbSubcategory.alpha = 1.0
+                
+                self.tfSubcategory.isUserInteractionEnabled = true
+                self.tfSubcategory.alpha = 1.0
+                self.tfSubcategory.placeholder = Constants.Module.CreateBudget.chooseSubCatPlaceholder
             } else {
                 self.tfSubcategory.text?.removeAll()
             }
@@ -323,20 +325,19 @@ extension UIScrollView {
     func scrollToPresentView(view: UIView, hasToolBar: Bool, animated: Bool) {
 
         if let origin = view.superview {
-            var newYPosition = CGPoint(x: 0, y: 0)
             let startPointY = origin.convert(view.frame.origin, to: self).y
-            var keyboardHeight = UIScreen.main.bounds.size.height / 2.59
-            keyboardHeight += hasToolBar ? 44.0 : 0
-            let extraMargin: CGFloat = 16.0
-            
+            let keyboardHeight = (UIScreen.main.bounds.size.height / 2.59) + (hasToolBar ? 34.0 : 0)
+            let marginBottom: CGFloat = 16.0
             let restFrameY = self.frame.height - keyboardHeight
             
-            if startPointY + view.frame.height + extraMargin > restFrameY {
-                newYPosition = CGPoint(x: self.contentOffset.x, y: startPointY + view.frame.height + extraMargin - restFrameY )
+            var newY = startPointY + view.frame.height + marginBottom - restFrameY
+            
+            if newY < 0 {
+                newY = 0.0
             }
             
             UIView.animate(withDuration: 0.6) {
-                self.contentOffset = newYPosition
+                self.contentOffset = CGPoint(x: self.contentOffset.x, y: newY)
                 self.layoutIfNeeded()
             }
         }
@@ -356,16 +357,9 @@ extension CreateBudgetViewController: UITextFieldDelegate {
         } else if textField == self.tfDescription {
             self.tfLocation.becomeFirstResponder()
         } else if textField == self.tfLocation {
-            self.loadTableHeight(with: 0.0)
+            self.loadTableHeight(value: 0.0)
             self.tfCategory.becomeFirstResponder()
         }
-        
-        // TODO: Those components hasn't "intro" key to return. We have to control this by other way.
-//        else if textField == self.tfCategory {
-//            self.tfSubcategory.becomeFirstResponder()
-//        } else if textField == self.tfSubcategory {
-//            self.view.endEditing(true)
-//        }
         
         return false
     }
@@ -373,30 +367,30 @@ extension CreateBudgetViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.selectedTextField = textField
         
-        if textField == self.tfLocation {
+        switch textField {
+        case self.tfLocation:
             self.touchLocation()
-        } else {
-            self.loadTableHeight(with: 0.0)
             
-            if textField == self.tfCategory || textField == self.tfSubcategory {
-                self.pickertState = textField == self.tfCategory ? .category : .subcategory
-                self.touchCategories()
-            }
-        }
-        
-        if self.keyboardActive {
+            guard let spaceViewToPresent = self.tableViewLocation else { return }
             
-            switch textField {
-            case self.tfLocation:
-                self.scrollView.scrollToPresentView(view: self.tableViewLocation, hasToolBar: false, animated: true)
-                break
-            case self.tfCategory, self.tfSubcategory:
-                self.scrollView.scrollToPresentView(view: textField, hasToolBar: true, animated: true)
-                break
-            default:
-                self.scrollView.scrollToPresentView(view: textField, hasToolBar: false, animated: true)
-                break
-            }
+            spaceViewToPresent.frame = CGRect(x: self.tableViewLocation.frame.origin.x, y: self.tableViewLocation.frame.origin.y, width: self.tableViewLocation.frame.size.width, height: 135.0)
+            
+            _ = self.keyboardActive ? self.scrollView.scrollToPresentView(view: spaceViewToPresent, hasToolBar: false, animated: true) : nil
+            break
+        case self.tfCategory, self.tfSubcategory:
+            _ = self.heightTableView.constant > 0.0 ? self.loadTableHeight(value: 0.0) : nil
+            
+            self.pickertState = textField == self.tfCategory ? .category : .subcategory
+            
+            self.touchCategories()
+            
+            _ = self.keyboardActive ? self.scrollView.scrollToPresentView(view: textField, hasToolBar: true, animated: true) : nil
+            break
+        default:
+            _ = self.heightTableView.constant > 0.0 ? self.loadTableHeight(value: 0.0) : nil
+            _ = self.keyboardActive ? self.scrollView.scrollToPresentView(view: textField, hasToolBar: false, animated: true) : nil
+            
+            break
         }
     }
 }
