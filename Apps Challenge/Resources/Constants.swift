@@ -18,11 +18,21 @@ struct Constants {
         
         struct BudgetList {
             static let title = "Presupuestos"
+            static let estimatedHeightRow: CGFloat = 350.0
         }
         
         struct CreateBudget {
             static let requiredPlaceholder = "Requiere una categoría."
             static let chooseSubCatPlaceholder = "Elija una sub-categoría."
+        }
+    }
+    
+    struct Cell {
+        
+        struct Budget {
+            static let phoneTitle = "Teléfono: "
+            static let emailTitle = "E-mail: "
+            static let definitionTitle = "Descripción:\n"
         }
     }
     

@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		C7B5334AA2757EA05412ACDF /* libPods-Apps Challenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921CB59B0F2A5B6188165AE3 /* libPods-Apps Challenge.a */; };
+		EE1F379C263EF7B500DBC552 /* Budget+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F379A263EF7B500DBC552 /* Budget+CoreDataClass.swift */; };
+		EE1F379D263EF7B500DBC552 /* Budget+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F379B263EF7B500DBC552 /* Budget+CoreDataProperties.swift */; };
 		EE375EC9263EC22E0063F012 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE375EC8263EC22E0063F012 /* CoreDataManager.swift */; };
 		EE375ECD263EC2510063F012 /* PersistentContainerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE375ECC263EC2510063F012 /* PersistentContainerManager.swift */; };
 		EE375ED1263EC4080063F012 /* BudgetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE375ED0263EC4080063F012 /* BudgetManager.swift */; };
+		EE375ED8263ED3380063F012 /* BudgetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE375ED7263ED3380063F012 /* BudgetListPresenter.swift */; };
+		EE375EDB263ED36A0063F012 /* BudgetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE375EDA263ED36A0063F012 /* BudgetListInteractor.swift */; };
 		EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */; };
 		EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */; };
 		EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */; };
 		EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */; };
+		EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */; };
+		EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D7263EEBF400039DD0 /* Budget.swift */; };
 		EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */; };
 		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
 		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
@@ -35,15 +41,21 @@
 		6BA1B3C0C7BB2DFCC263D05B /* Pods-Apps Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apps Challenge.release.xcconfig"; path = "Target Support Files/Pods-Apps Challenge/Pods-Apps Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		8AF9638032A1F6472F554ACD /* Pods-Apps Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apps Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Apps Challenge/Pods-Apps Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		921CB59B0F2A5B6188165AE3 /* libPods-Apps Challenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Apps Challenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE1F379A263EF7B500DBC552 /* Budget+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EE1F379B263EF7B500DBC552 /* Budget+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Budget+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EE375EC8263EC22E0063F012 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		EE375ECC263EC2510063F012 /* PersistentContainerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerManager.swift; sourceTree = "<group>"; };
 		EE375ED0263EC4080063F012 /* BudgetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManager.swift; sourceTree = "<group>"; };
+		EE375ED7263ED3380063F012 /* BudgetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListPresenter.swift; sourceTree = "<group>"; };
+		EE375EDA263ED36A0063F012 /* BudgetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListInteractor.swift; sourceTree = "<group>"; };
 		EE41C4C7262B1C6E00DD02EB /* Apps Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apps Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE41C4CA262B1C6E00DD02EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE41C4D4262B1C6E00DD02EB /* Apps_Challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apps_Challenge.xcdatamodel; sourceTree = "<group>"; };
 		EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE41C4D9262B1C6F00DD02EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE41C4DB262B1C6F00DD02EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListRouter.swift; sourceTree = "<group>"; };
+		EE4DE4D7263EEBF400039DD0 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
@@ -89,13 +101,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EE375EB6263EC0860063F012 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		EE375EBD263EC1A80063F012 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +133,31 @@
 				EE375ED0263EC4080063F012 /* BudgetManager.swift */,
 			);
 			path = Budget;
+			sourceTree = "<group>";
+		};
+		EE375ED4263ED30B0063F012 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EE375ED7263ED3380063F012 /* BudgetListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EE375ED5263ED3100063F012 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */,
+				EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE375ED6263ED3130063F012 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				EE375EDA263ED36A0063F012 /* BudgetListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		EE41C4BE262B1C6E00DD02EB = {
@@ -186,10 +216,51 @@
 		EE41C4E8262B203800DD02EB /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				EE375EB6263EC0860063F012 /* Entities */,
+				EE4DE4DF263EF6BB00039DD0 /* Entities */,
 				EE41C4D3262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		EE4DE4D1263EE48700039DD0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		EE4DE4D5263EEBD600039DD0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EEDA2145263074F200FE8927 /* LocationCellModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		EE4DE4D6263EEBDE00039DD0 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				EE4DE4D7263EEBF400039DD0 /* Budget.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		EE4DE4DF263EF6BB00039DD0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EE4DE4E6263EF6F100039DD0 /* Budget */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		EE4DE4E6263EF6F100039DD0 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				EE1F379A263EF7B500DBC552 /* Budget+CoreDataClass.swift */,
+				EE1F379B263EF7B500DBC552 /* Budget+CoreDataProperties.swift */,
+			);
+			path = Budget;
 			sourceTree = "<group>";
 		};
 		EEC6F772262B25EE0014B053 /* Module */ = {
@@ -204,8 +275,10 @@
 		EEC6F77A262B5DAD0014B053 /* BudgetList */ = {
 			isa = PBXGroup;
 			children = (
-				EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */,
-				EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */,
+				EE4DE4D1263EE48700039DD0 /* Router */,
+				EE375ED6263ED3130063F012 /* Interactor */,
+				EE375ED5263ED3100063F012 /* View */,
+				EE375ED4263ED30B0063F012 /* Presenter */,
 			);
 			path = BudgetList;
 			sourceTree = "<group>";
@@ -231,7 +304,8 @@
 		EEC6F784262B663C0014B053 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EEDA2145263074F200FE8927 /* LocationCellModel.swift */,
+				EE4DE4D6263EEBDE00039DD0 /* Budget */,
+				EE4DE4D5263EEBD600039DD0 /* Location */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,16 +450,22 @@
 			files = (
 				EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */,
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
+				EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */,
 				EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */,
 				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
+				EE1F379C263EF7B500DBC552 /* Budget+CoreDataClass.swift in Sources */,
 				EEDA213C263068BA00FE8927 /* Colors.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
+				EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */,
 				EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */,
+				EE375ED8263ED3380063F012 /* BudgetListPresenter.swift in Sources */,
 				EEDA213626305D1000FE8927 /* Constants.swift in Sources */,
+				EE1F379D263EF7B500DBC552 /* Budget+CoreDataProperties.swift in Sources */,
 				EE375ED1263EC4080063F012 /* BudgetManager.swift in Sources */,
 				EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */,
 				EE375EC9263EC22E0063F012 /* CoreDataManager.swift in Sources */,
 				EE375ECD263EC2510063F012 /* PersistentContainerManager.swift in Sources */,
+				EE375EDB263ED36A0063F012 /* BudgetListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,15 +36,19 @@
                         <constraint firstItem="9Qx-oG-pTA" firstAttribute="top" secondItem="5fk-1t-c24" secondAttribute="top" id="wuo-t2-MhH"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sAT-zx-TG5">
-                    <rect key="frame" x="0.0" y="68" width="414" height="828"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sAT-zx-TG5">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fYX-l8-aDs"/>
+                        <outlet property="delegate" destination="-1" id="gUy-Yw-3Tc"/>
+                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="sAT-zx-TG5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="68" id="5bH-WA-RcX"/>
+                <constraint firstItem="sAT-zx-TG5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5bH-WA-RcX"/>
                 <constraint firstItem="sAT-zx-TG5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="96o-mb-17w"/>
                 <constraint firstAttribute="bottom" secondItem="sAT-zx-TG5" secondAttribute="bottom" id="Mya-PN-18N"/>
                 <constraint firstItem="5fk-1t-c24" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OWP-6Y-sgm"/>

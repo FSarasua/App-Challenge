@@ -15,11 +15,10 @@ class CreateBudgetViewController: UIViewController {
     }
 
     //MARK: - Components
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var scrollViewContent: UIView!
-    
     @IBOutlet weak var lbTitle: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewContent: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet weak var lbName: UILabel!
@@ -49,6 +48,8 @@ class CreateBudgetViewController: UIViewController {
     
     //MARK: - Constraint
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
+    
+    // MARK: - TODO: Adapt CreateBudget module to VIPER architecture.
     
     //MARK: - Variable
     var keyboardActive: Bool = false

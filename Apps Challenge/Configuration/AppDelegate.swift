@@ -17,16 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /* TODO: Testing. Remove in the future. */
-//        if self.managerCoreData.isCoreDataEmpty() {
-//            self.managerCoreData.initCoreData()
-//        } else {
-//        self.managerCoreData.deleteAll()
+        if self.managerCoreData.isCoreDataEmpty() {
+            self.managerCoreData.initCoreData()
+        }
+//        else {
+//            self.managerCoreData.deleteAll()
 //        }
         
-        let navigation = UINavigationController(rootViewController: BudgetListViewController())
-        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigation
+        self.window?.rootViewController = BudgetListRouter.createModule()
             
         self.window?.makeKeyAndVisible()
         

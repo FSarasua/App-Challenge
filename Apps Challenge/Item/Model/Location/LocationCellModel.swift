@@ -8,7 +8,6 @@
 import Foundation
 
 class LocationCellModel {
-    
     var title: String
     var isLastItem: Bool
     
