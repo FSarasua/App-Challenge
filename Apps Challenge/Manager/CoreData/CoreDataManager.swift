@@ -21,7 +21,7 @@ struct CoreDataManager {
         
         self.managerBudget.create(name: "Antonio", phone: 655871624, email: "antonio@mail.com", definition: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar dolor et mauris sagittis, in porta sem ultrices. Curabitur at ante mi. Nunc tincidunt est sed magna bibendum, nec elementum diam eleifend.", location: "Francia", subcategory: "Mudanzas Viviendas")
         
-        self.managerBudget.create(name: "Fran", phone: 674325538, email: "franciscojavier.sg.trabajo@mail.com", definition: "Necesito una mosquitera.", location: "España", subcategory: "Mosquitera")
+        self.managerBudget.create(name: "Fran", phone: 674325538, email: "franciscojavier.sg.trabajo@gmail.com", definition: "Necesito una mosquitera.", location: "España", subcategory: "Mosquitera")
     }
     
     func isCoreDataEmpty() -> Bool {
