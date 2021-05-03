@@ -100,6 +100,9 @@ class CreateBudgetViewController: UIViewController {
     }
     
     private func loadData() {
+        // Load Data Table
+        self.loadDataTable()
+        
         // Text Field Sub-Category
         self.tfSubcategory.placeholder = Constants.Module.CreateBudget.requiredPlaceholder
         

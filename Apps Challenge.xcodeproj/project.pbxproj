@@ -26,6 +26,7 @@
 		EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */; };
 		EEA72918263F6B1E0053167F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72917263F6B1E0053167F /* Enums.swift */; };
 		EEA7291F26403A810053167F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7291E26403A810053167F /* UITextField+Extension.swift */; };
+		EEA7292A26403FA40053167F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7292926403FA40053167F /* UILabel+Extension.swift */; };
 		EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */; };
 		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
 		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
@@ -66,6 +67,7 @@
 		EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetInteractor.swift; sourceTree = "<group>"; };
 		EEA72917263F6B1E0053167F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EEA7291E26403A810053167F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		EEA7292926403FA40053167F /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
@@ -319,17 +321,26 @@
 		EEA7291C26403A420053167F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				EEA7291D26403A480053167F /* TextField */,
+				EEA7292826403FA40053167F /* UILabel */,
+				EEA7291D26403A480053167F /* UITextField */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		EEA7291D26403A480053167F /* TextField */ = {
+		EEA7291D26403A480053167F /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
 				EEA7291E26403A810053167F /* UITextField+Extension.swift */,
 			);
-			path = TextField;
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		EEA7292826403FA40053167F /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7292926403FA40053167F /* UILabel+Extension.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		EEC6F772262B25EE0014B053 /* Module */ = {
@@ -535,6 +546,7 @@
 				EE375ED8263ED3380063F012 /* BudgetListPresenter.swift in Sources */,
 				EEDA213626305D1000FE8927 /* Constants.swift in Sources */,
 				EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */,
+				EEA7292A26403FA40053167F /* UILabel+Extension.swift in Sources */,
 				EE1F379D263EF7B500DBC552 /* Budget+CoreDataProperties.swift in Sources */,
 				EE375ED1263EC4080063F012 /* BudgetManager.swift in Sources */,
 				EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */,

@@ -19,6 +19,8 @@ class BudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var lbEmail: UILabel!
     @IBOutlet weak var lbDefinition: UILabel!
     
+    @IBOutlet var arrayAllLabel: [UILabel]!
+    
     // MARK: - Variable
     var data: BudgetCellModel = BudgetCellModel()
     
@@ -47,6 +49,12 @@ class BudgetTableViewCell: UITableViewCell {
     }
     
     private func loadStyle() {
+        // All Label
+        for label in self.arrayAllLabel {
+            label.loadStyleBudgetList()
+        }
+        
+        // View Card
         self.viewCard.layer.cornerRadius = 20.0
     }
 }

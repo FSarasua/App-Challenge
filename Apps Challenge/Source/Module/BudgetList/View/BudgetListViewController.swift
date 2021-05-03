@@ -29,25 +29,33 @@ class BudgetListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureView()
         self.loadData()
         self.loadStyle()
     }
     
     //MARK: - Private Methods
-    private func loadData() {
-        // TableView        
+    private func configureView() {
+        // TableView
         self.tableView.register(Constants.Nib.BudgetCell, forCellReuseIdentifier: Constants.Identifier.BudgetID)
         
         // NavigationBar
-        self.title = Constants.Module.BudgetList.title
         self.createAddButton()
-        
+    }
+    
+    private func loadData() {
         // Load Table Data
         self.presenter?.loadDataTable()
+        
+        // NavigationBar
+        self.title = Constants.Module.BudgetList.title
     }
     
     private func loadStyle() {
-        self.transparentNavigationBar()
+        // Navigation bar
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
+        self.setTransparencyNavigationBar()
+
     }
     
     private func createAddButton() {
@@ -63,7 +71,7 @@ class BudgetListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView:  addButton)
     }
     
-    private func transparentNavigationBar() {
+    private func setTransparencyNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
