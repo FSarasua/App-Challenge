@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol BudgetListRouterProtocol {
-    
+    func openCreateBudget(navigation: UINavigationController)
 }
 
 class BudgetListRouter {
@@ -34,4 +34,7 @@ class BudgetListRouter {
 
 extension BudgetListRouter: BudgetListRouterProtocol {
     
+    func openCreateBudget(navigation: UINavigationController) {        
+        navigation.pushViewController(CreateBudgetRouter.createModule(), animated: true)
+    }
 }

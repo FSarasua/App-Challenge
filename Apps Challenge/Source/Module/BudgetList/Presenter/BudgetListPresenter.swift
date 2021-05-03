@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol BudgetListPresenterProtocol {
+    func goToCreateBudget(navigation: UINavigationController)
     func loadDataTable()
 }
 
@@ -26,6 +28,10 @@ class BudgetListPresenter {
 
 extension BudgetListPresenter: BudgetListPresenterProtocol {
     
+    func goToCreateBudget(navigation: UINavigationController) {
+        self.router?.openCreateBudget(navigation: navigation)
+    }
+    
     func loadDataTable() {
         self.interactor?.getDataTable()
     }
@@ -35,6 +41,6 @@ extension BudgetListPresenter: BudgetListInteractorOutputProtocol {
     
     func reponse(model: BudgetListModel) {
         self.model = model
-        self.view?.results(model: model)
+        self.view?.setDataTable(model: model)
     }
 }

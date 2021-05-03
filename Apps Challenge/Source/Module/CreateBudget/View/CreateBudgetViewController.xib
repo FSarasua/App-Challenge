@@ -39,6 +39,13 @@
                 <outlet property="tfPhone" destination="eZu-l7-Gvh" id="kIC-xz-UuA"/>
                 <outlet property="tfSubcategory" destination="c43-3x-8It" id="JQe-bo-PbZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="arrayAllTextFields" destination="nML-1E-c2X" collectionClass="NSMutableArray" id="ekx-OL-6kn"/>
+                <outletCollection property="arrayAllTextFields" destination="eZu-l7-Gvh" collectionClass="NSMutableArray" id="THI-ui-YBr"/>
+                <outletCollection property="arrayAllTextFields" destination="MOr-Zr-tqu" collectionClass="NSMutableArray" id="MEw-cM-218"/>
+                <outletCollection property="arrayAllTextFields" destination="fSa-Nb-2et" collectionClass="NSMutableArray" id="KZv-fm-ty0"/>
+                <outletCollection property="arrayAllTextFields" destination="Lm5-XB-qos" collectionClass="NSMutableArray" id="oZb-fL-wGE"/>
+                <outletCollection property="arrayAllTextFields" destination="K02-Bk-ooU" collectionClass="NSMutableArray" id="6sz-zn-BEi"/>
+                <outletCollection property="arrayAllTextFields" destination="c43-3x-8It" collectionClass="NSMutableArray" id="Zla-zn-UUD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -46,13 +53,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="Bky-LQ-CfS">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="Bky-LQ-CfS">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo presupuesto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZS-ZZ-Ucw">
                     <rect key="frame" x="40" y="60" width="260.5" height="35.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="30"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-5c-LcO">
@@ -234,7 +241,7 @@
         </view>
     </objects>
     <resources>
-        <image name="background4" width="225" height="225"/>
+        <image name="background2" width="225" height="225"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

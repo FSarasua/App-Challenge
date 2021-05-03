@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BudgetListViewProtocol {
-    func results(model: BudgetListModel)
+    func setDataTable(model: BudgetListModel)
 }
 
 class BudgetListViewController: UIViewController {
@@ -72,13 +72,16 @@ class BudgetListViewController: UIViewController {
     
     // MARK: - Actions
     @objc func goToCreateBudget() {
-        self.navigationController?.pushViewController(CreateBudgetViewController(), animated: true)
+        
+        guard let navigation = self.navigationController else { return }
+        
+        self.presenter?.goToCreateBudget(navigation: navigation)
     }
 }
 
 extension BudgetListViewController: BudgetListViewProtocol {
     
-    func results(model: BudgetListModel) {
+    func setDataTable(model: BudgetListModel) {
         self.model = model
         self.tableView.reloadData()
     }

@@ -7,12 +7,11 @@
 
 import UIKit
 
-class CreateBudgetViewController: UIViewController {
+protocol CreateBudgetViewProtocol {
     
-    enum PickerState {
-        case category
-        case subcategory
-    }
+}
+
+class CreateBudgetViewController: UIViewController {
 
     //MARK: - Components
     @IBOutlet weak var lbTitle: UILabel!
@@ -44,12 +43,15 @@ class CreateBudgetViewController: UIViewController {
     @IBOutlet weak var lbSubcategory: UILabel!
     @IBOutlet weak var tfSubcategory: UITextField!
     
+    @IBOutlet var arrayAllTextFields: [UITextField]!
+    
     let pickerView: UIPickerView = UIPickerView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height / 2.59)))
     
     //MARK: - Constraint
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
     
-    // MARK: - TODO: Adapt CreateBudget module to VIPER architecture.
+    // MARK: - VIPER
+    var presenter: CreateBudgetPresenterProtocol?
     
     //MARK: - Variable
     var keyboardActive: Bool = false
@@ -67,26 +69,16 @@ class CreateBudgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.configureView()
         self.loadData()
         self.loadStyle()
     }
     
     // MARK: - Private method
-    private func loadData() {
-        
-        // Gesture Recognizer to hide keyboard.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        tap.delegate = self
-        self.view.addGestureRecognizer(tap)
-        
-        // Notification Center to control show / hide keyboard.
-        let notificationCenter = NotificationCenter.default
-
-        notificationCenter.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-
-        notificationCenter.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    
+    private func configureView() {
+        self.addGestureRecognizer()
+        self.observeKeyboardTransition()
         
         // Navigation Bar
         self.createAddBarButton()
@@ -95,9 +87,67 @@ class CreateBudgetViewController: UIViewController {
         self.tableViewLocation.register(Constants.Nib.LocationCell, forCellReuseIdentifier: Constants.Identifier.LocationID)
         
         // Picker View
+        self.createToolbarPickerView()
+        
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         
+        // Text Field Category
+        self.tfCategory.inputView = self.pickerView
+        
+        // Text Field Sub-Category
+        self.tfSubcategory.inputView = self.pickerView
+    }
+    
+    private func loadData() {
+        // Text Field Sub-Category
+        self.tfSubcategory.placeholder = Constants.Module.CreateBudget.requiredPlaceholder
+        
+        // Constraints
+        self.heightTableView.constant = 0.0
+    }
+    
+    private func loadStyle() {
+        
+        // All Text Fields
+        for textField in self.arrayAllTextFields {
+            textField.loadStyleCreateBudget()
+        }
+        
+        // Label Sub-Category
+        self.lbSubcategory.isUserInteractionEnabled = false
+        self.lbSubcategory.alpha = 0.6
+        
+        // Text Field Sub-Category
+        self.tfSubcategory.isUserInteractionEnabled = false
+        self.tfSubcategory.alpha = 0.6
+        
+        // Table View
+        self.tableViewLocation.layer.borderWidth = 2.0
+        self.tableViewLocation.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    private func addGestureRecognizer() {
+        // Gesture Recognizer. Hide keyboard.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        tap.delegate = self
+        
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    private func observeKeyboardTransition() {
+        // Notification Center to control show / hide keyboard.
+        let notificationCenter = NotificationCenter.default
+
+        notificationCenter.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        notificationCenter.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func createToolbarPickerView() {
         // Toolbar Picker View.
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.pickerView.frame.width, height: 44.0))
         
@@ -115,32 +165,11 @@ class CreateBudgetViewController: UIViewController {
         toolBar.items = [btnCancel, btnSpace, btnDone]
         
         // Text Field Category
-        self.tfCategory.inputView = self.pickerView
         self.tfCategory.inputAccessoryView = toolBar
         
         // Text Field Sub-Category
-        self.tfSubcategory.placeholder = Constants.Module.CreateBudget.requiredPlaceholder
-        self.tfSubcategory.inputView = self.pickerView
         self.tfSubcategory.inputAccessoryView = toolBar
-        
-        // Constraints
-        self.heightTableView.constant = 0.0
-    }
-    
-    private func loadStyle() {
-        
-        // Label Sub-Category
-        self.lbSubcategory.isUserInteractionEnabled = false
-        self.lbSubcategory.alpha = 0.6
-        
-        // Text Field Sub-Category
-        self.tfSubcategory.isUserInteractionEnabled = false
-        self.tfSubcategory.alpha = 0.6
-        
-        // Table View
-        self.tableViewLocation.layer.borderWidth = 2.0
-        self.tableViewLocation.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    }
+        }
     
     private func createAddBarButton() {
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDone))
@@ -307,6 +336,10 @@ class CreateBudgetViewController: UIViewController {
     @objc func tapDone() {
         // Save the new budget
     }
+}
+
+extension CreateBudgetViewController: CreateBudgetViewProtocol {
+    
 }
 
 extension CreateBudgetViewController: UIGestureRecognizerDelegate {

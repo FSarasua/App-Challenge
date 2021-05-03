@@ -21,6 +21,11 @@
 		EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */; };
 		EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */; };
 		EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D7263EEBF400039DD0 /* Budget.swift */; };
+		EEA7290B263F698B0053167F /* CreateBudgetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7290A263F698B0053167F /* CreateBudgetRouter.swift */; };
+		EEA7290F263F6A280053167F /* CreateBudgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7290E263F6A280053167F /* CreateBudgetPresenter.swift */; };
+		EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */; };
+		EEA72918263F6B1E0053167F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72917263F6B1E0053167F /* Enums.swift */; };
+		EEA7291F26403A810053167F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7291E26403A810053167F /* UITextField+Extension.swift */; };
 		EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */; };
 		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
 		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
@@ -56,6 +61,11 @@
 		EE41C4DB262B1C6F00DD02EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListRouter.swift; sourceTree = "<group>"; };
 		EE4DE4D7263EEBF400039DD0 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		EEA7290A263F698B0053167F /* CreateBudgetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetRouter.swift; sourceTree = "<group>"; };
+		EEA7290E263F6A280053167F /* CreateBudgetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetPresenter.swift; sourceTree = "<group>"; };
+		EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetInteractor.swift; sourceTree = "<group>"; };
+		EEA72917263F6B1E0053167F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		EEA7291E26403A810053167F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,11 +191,8 @@
 		EE41C4C9262B1C6E00DD02EB /* Apps Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				EE375EBD263EC1A80063F012 /* Manager */,
-				EEC6F782262B66320014B053 /* Item */,
-				EEC6F772262B25EE0014B053 /* Module */,
+				EEA7291A264035730053167F /* Source */,
 				EE41C4E8262B203800DD02EB /* Database */,
-				EE41C4E7262B202800DD02EB /* Resources */,
 				EE41C4E6262B201100DD02EB /* Configuration */,
 			);
 			path = "Apps Challenge";
@@ -209,6 +216,7 @@
 				EEDA213526305D1000FE8927 /* Constants.swift */,
 				EEDA2138263068AF00FE8927 /* Colors.xcassets */,
 				EEDA213B263068BA00FE8927 /* Colors.swift */,
+				EEA72917263F6B1E0053167F /* Enums.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -263,6 +271,67 @@
 			path = Budget;
 			sourceTree = "<group>";
 		};
+		EEA72908263F69710053167F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC6F78D262C49AB0014B053 /* CreateBudgetViewController.swift */,
+				EEC6F78E262C49AB0014B053 /* CreateBudgetViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEA72909263F697C0053167F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7290A263F698B0053167F /* CreateBudgetRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		EEA7290D263F6A150053167F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7290E263F6A280053167F /* CreateBudgetPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EEA72912263F6A2E0053167F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		EEA7291A264035730053167F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7291C26403A420053167F /* Extension */,
+				EE375EBD263EC1A80063F012 /* Manager */,
+				EEC6F782262B66320014B053 /* Item */,
+				EEC6F772262B25EE0014B053 /* Module */,
+				EE41C4E7262B202800DD02EB /* Resources */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		EEA7291C26403A420053167F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7291D26403A480053167F /* TextField */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EEA7291D26403A480053167F /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7291E26403A810053167F /* UITextField+Extension.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		EEC6F772262B25EE0014B053 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,10 +344,10 @@
 		EEC6F77A262B5DAD0014B053 /* BudgetList */ = {
 			isa = PBXGroup;
 			children = (
-				EE4DE4D1263EE48700039DD0 /* Router */,
-				EE375ED6263ED3130063F012 /* Interactor */,
 				EE375ED5263ED3100063F012 /* View */,
 				EE375ED4263ED30B0063F012 /* Presenter */,
+				EE4DE4D1263EE48700039DD0 /* Router */,
+				EE375ED6263ED3130063F012 /* Interactor */,
 			);
 			path = BudgetList;
 			sourceTree = "<group>";
@@ -322,8 +391,10 @@
 		EEC6F78C262C498F0014B053 /* CreateBudget */ = {
 			isa = PBXGroup;
 			children = (
-				EEC6F78D262C49AB0014B053 /* CreateBudgetViewController.swift */,
-				EEC6F78E262C49AB0014B053 /* CreateBudgetViewController.xib */,
+				EEA72908263F69710053167F /* View */,
+				EEA7290D263F6A150053167F /* Presenter */,
+				EEA72909263F697C0053167F /* Router */,
+				EEA72912263F6A2E0053167F /* Interactor */,
 			);
 			path = CreateBudget;
 			sourceTree = "<group>";
@@ -452,17 +523,22 @@
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
 				EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */,
 				EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */,
+				EEA7290B263F698B0053167F /* CreateBudgetRouter.swift in Sources */,
 				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
 				EE1F379C263EF7B500DBC552 /* Budget+CoreDataClass.swift in Sources */,
 				EEDA213C263068BA00FE8927 /* Colors.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
+				EEA7290F263F6A280053167F /* CreateBudgetPresenter.swift in Sources */,
+				EEA72918263F6B1E0053167F /* Enums.swift in Sources */,
 				EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */,
 				EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */,
 				EE375ED8263ED3380063F012 /* BudgetListPresenter.swift in Sources */,
 				EEDA213626305D1000FE8927 /* Constants.swift in Sources */,
+				EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */,
 				EE1F379D263EF7B500DBC552 /* Budget+CoreDataProperties.swift in Sources */,
 				EE375ED1263EC4080063F012 /* BudgetManager.swift in Sources */,
 				EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */,
+				EEA7291F26403A810053167F /* UITextField+Extension.swift in Sources */,
 				EE375EC9263EC22E0063F012 /* CoreDataManager.swift in Sources */,
 				EE375ECD263EC2510063F012 /* PersistentContainerManager.swift in Sources */,
 				EE375EDB263ED36A0063F012 /* BudgetListInteractor.swift in Sources */,
