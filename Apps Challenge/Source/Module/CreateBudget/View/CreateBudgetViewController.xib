@@ -18,6 +18,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateBudgetViewController" customModule="Apps_Challenge" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicatorView" destination="LQm-pW-QUo" id="bOs-4H-2hN"/>
+                <outlet property="backgroundActivityIndicatorView" destination="JPH-Z1-03s" id="Qwm-dV-XvY"/>
                 <outlet property="heightTableView" destination="he6-Ik-9NJ" id="vsM-c6-mMR"/>
                 <outlet property="lbCategory" destination="Mj9-iI-vVJ" id="TO0-UP-F3q"/>
                 <outlet property="lbDescription" destination="Iic-EH-8pd" id="3or-h4-z5s"/>
@@ -80,9 +82,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca su nombre." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nML-1E-c2X">
                                             <rect key="frame" x="0.0" y="36" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="AEP-TH-yTf"/>
                                             </connections>
@@ -96,9 +98,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono: 9 dígitos." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZu-l7-Gvh">
                                             <rect key="frame" x="0.0" y="122" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="tel"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="KbB-A9-ZaL"/>
                                             </connections>
@@ -112,9 +114,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca su correo electrónico." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOr-Zr-tqu">
                                             <rect key="frame" x="0.0" y="208" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="Rvo-Yq-RdQ"/>
                                             </connections>
@@ -128,9 +130,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Detalles del presupuesto." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSa-Nb-2et">
                                             <rect key="frame" x="0.0" y="294" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="8dF-Wc-NSV"/>
                                             </connections>
@@ -144,9 +146,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca su ubicación." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-XB-qos">
                                             <rect key="frame" x="0.0" y="380" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="location"/>
                                             <connections>
                                                 <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="bDs-zq-KPF"/>
                                                 <outlet property="delegate" destination="-1" id="k5k-Tz-kgX"/>
@@ -161,9 +163,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Elija una categoría." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K02-Bk-ooU">
                                             <rect key="frame" x="0.0" y="466" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="449-Pd-3eI"/>
                                             </connections>
@@ -177,9 +179,9 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Requiere una categoría." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c43-3x-8It">
                                             <rect key="frame" x="0.0" y="552" width="334" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="jPm-0d-6br"/>
                                             </connections>
@@ -188,7 +190,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6Z-IG-Pgs">
-                                    <rect key="frame" x="45" y="430" width="334" height="120"/>
+                                    <rect key="frame" x="45" y="430" width="324" height="120"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="he6-Ik-9NJ"/>
@@ -207,7 +209,7 @@
                                 <constraint firstItem="kUC-0L-zr7" firstAttribute="top" secondItem="R9k-hl-fqU" secondAttribute="top" constant="16" id="fae-Jt-GZ6"/>
                                 <constraint firstAttribute="trailing" secondItem="kUC-0L-zr7" secondAttribute="trailing" constant="40" id="j79-QY-rNz"/>
                                 <constraint firstItem="Lm5-XB-qos" firstAttribute="bottom" secondItem="S6Z-IG-Pgs" secondAttribute="top" id="poR-T2-mOu"/>
-                                <constraint firstItem="S6Z-IG-Pgs" firstAttribute="trailing" secondItem="Lm5-XB-qos" secondAttribute="trailing" constant="5" id="q8H-NQ-NX9"/>
+                                <constraint firstItem="Lm5-XB-qos" firstAttribute="trailing" secondItem="S6Z-IG-Pgs" secondAttribute="trailing" constant="5" id="q8H-NQ-NX9"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -221,16 +223,34 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="lt7-dP-ma2"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="JlH-pd-3Xx"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Z1-03s">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-pW-QUo">
+                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="LQm-pW-QUo" firstAttribute="centerY" secondItem="JPH-Z1-03s" secondAttribute="centerY" id="R4z-9D-A3o"/>
+                        <constraint firstItem="LQm-pW-QUo" firstAttribute="centerX" secondItem="JPH-Z1-03s" secondAttribute="centerX" id="rG6-hz-7V3"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
                 <constraint firstItem="R9k-hl-fqU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2O8-QS-Ptz"/>
                 <constraint firstItem="Bky-LQ-CfS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8up-PV-CUj"/>
+                <constraint firstAttribute="trailing" secondItem="JPH-Z1-03s" secondAttribute="trailing" id="ALK-Kg-gjf"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="K8X-gW-2V8"/>
+                <constraint firstItem="JPH-Z1-03s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PnW-fk-HGW"/>
                 <constraint firstItem="Bky-LQ-CfS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VcC-1f-co7"/>
+                <constraint firstItem="JPH-Z1-03s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YwZ-4P-oct"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="top" secondItem="ZZS-ZZ-Ucw" secondAttribute="bottom" constant="16" id="eBm-UH-TTG"/>
                 <constraint firstAttribute="trailing" secondItem="Bky-LQ-CfS" secondAttribute="trailing" id="eyG-Gl-his"/>
+                <constraint firstAttribute="bottom" secondItem="JPH-Z1-03s" secondAttribute="bottom" id="hat-cs-1sz"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="mbW-Ig-mus"/>
                 <constraint firstItem="ZZS-ZZ-Ucw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="nge-7g-25B"/>
                 <constraint firstItem="KFO-5c-LcO" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="pe4-fU-3T2"/>

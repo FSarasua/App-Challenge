@@ -8,22 +8,24 @@
 import Foundation
 import UIKit
 
-protocol BudgetListPresenterProtocol {
+protocol BudgetListPresenterProtocol: class {
     func goToCreateBudget(navigation: UINavigationController)
-    func loadDataTable()
+    func removeDataTable()
+    func loadData()
+    func reloadData()
 }
 
-protocol BudgetListInteractorOutputProtocol {
-    func reponse(model: BudgetListModel)
+protocol BudgetListInteractorOutputProtocol: class {
+    func setData(viewModel: BudgetListViewModel)
 }
 
 class BudgetListPresenter {
-    var view: BudgetListViewProtocol?
+    weak var view: BudgetListViewProtocol?
     var interactor: BudgetListInteractorInputProtocol?
     var router: BudgetListRouterProtocol?
     
     // MARK: - Variables
-    var model: BudgetListModel?
+    var viewModel: BudgetListViewModel?
 }
 
 extension BudgetListPresenter: BudgetListPresenterProtocol {
@@ -32,15 +34,24 @@ extension BudgetListPresenter: BudgetListPresenterProtocol {
         self.router?.openCreateBudget(navigation: navigation)
     }
     
-    func loadDataTable() {
+    func removeDataTable() {
+        self.interactor?.removeDataTable()
+    }
+    
+    func loadData() {
         self.interactor?.getDataTable()
+    }
+    
+    func reloadData() {
+        self.loadData()
     }
 }
 
 extension BudgetListPresenter: BudgetListInteractorOutputProtocol {
     
-    func reponse(model: BudgetListModel) {
-        self.model = model
-        self.view?.setDataTable(model: model)
+    func setData(viewModel: BudgetListViewModel) {
+        self.viewModel = viewModel
+        self.view?.setData(viewModel: viewModel)
+        self.view?.emptyView(isHidden: !viewModel.cellModels.isEmpty)
     }
 }

@@ -7,13 +7,20 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BudgetListViewController" customModule="Apps_Challenge" customModuleProvider="target">
             <connections>
                 <outlet property="imgBackground" destination="9Qx-oG-pTA" id="k76-R3-Qzx"/>
+                <outlet property="lbEmptyMessage" destination="Awg-KU-kfh" id="Wxr-oH-ptN"/>
                 <outlet property="tableView" destination="sAT-zx-TG5" id="CHd-6k-s8x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBackground" destination="5fk-1t-c24" id="XXW-qa-rNK"/>
+                <outlet property="viewEmpty" destination="kyc-LN-pue" id="7F1-Vz-sto"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -44,16 +51,36 @@
                         <outlet property="delegate" destination="-1" id="gUy-Yw-3Tc"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-LN-pue">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No existen presupuestos." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awg-KU-kfh">
+                            <rect key="frame" x="102" y="437" width="210.5" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="19"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Awg-KU-kfh" firstAttribute="centerY" secondItem="kyc-LN-pue" secondAttribute="centerY" id="YnM-oI-Nyl"/>
+                        <constraint firstItem="Awg-KU-kfh" firstAttribute="centerX" secondItem="kyc-LN-pue" secondAttribute="centerX" id="vAX-Xq-OhO"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="sAT-zx-TG5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5bH-WA-RcX"/>
                 <constraint firstItem="sAT-zx-TG5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="96o-mb-17w"/>
+                <constraint firstItem="kyc-LN-pue" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9Q1-Hr-kDc"/>
+                <constraint firstAttribute="trailing" secondItem="kyc-LN-pue" secondAttribute="trailing" id="Jgi-0t-h9U"/>
                 <constraint firstAttribute="bottom" secondItem="sAT-zx-TG5" secondAttribute="bottom" id="Mya-PN-18N"/>
                 <constraint firstItem="5fk-1t-c24" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OWP-6Y-sgm"/>
                 <constraint firstAttribute="bottom" secondItem="5fk-1t-c24" secondAttribute="bottom" id="OcV-Pz-AOz"/>
+                <constraint firstItem="kyc-LN-pue" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xbp-ht-TNP"/>
                 <constraint firstAttribute="trailing" secondItem="sAT-zx-TG5" secondAttribute="trailing" id="bwA-ba-hjD"/>
+                <constraint firstAttribute="bottom" secondItem="kyc-LN-pue" secondAttribute="bottom" id="fYF-c8-3qB"/>
                 <constraint firstAttribute="trailing" secondItem="5fk-1t-c24" secondAttribute="trailing" id="k7Y-02-aGi"/>
                 <constraint firstItem="5fk-1t-c24" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z8n-FV-ss3"/>
             </constraints>

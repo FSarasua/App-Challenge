@@ -17,7 +17,7 @@ class BudgetTableViewCell: UITableViewCell {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var lbEmail: UILabel!
-    @IBOutlet weak var lbDefinition: UILabel!
+    @IBOutlet weak var lbDescription: UILabel!
     
     @IBOutlet var arrayAllLabel: [UILabel]!
     
@@ -45,7 +45,7 @@ class BudgetTableViewCell: UITableViewCell {
         self.lbName.text = self.data.name
         self.lbPhone.text = self.data.phone
         self.lbEmail.text = self.data.email
-        self.lbDefinition.text = self.data.definition
+        self.lbDescription.text = self.data.description
     }
     
     private func loadStyle() {

@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol BudgetListViewProtocol {
-    func setDataTable(model: BudgetListModel)
+protocol BudgetListViewProtocol: class {
+    func setData(viewModel: BudgetListViewModel)
+    func emptyView(isHidden: Bool)
 }
 
 class BudgetListViewController: UIViewController {
@@ -19,11 +20,14 @@ class BudgetListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var viewEmpty: UIView!
+    @IBOutlet weak var lbEmptyMessage: UILabel!
+    
     // MARK: - VIPER
     var presenter: BudgetListPresenterProtocol?
     
     // MARK: - Variables
-    var model = BudgetListModel()
+    var model = BudgetListViewModel()
     
     // MARK: - Lyfe Cycle
     override func viewDidLoad() {
@@ -34,6 +38,12 @@ class BudgetListViewController: UIViewController {
         self.loadStyle()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.presenter?.reloadData()
+    }
+    
     //MARK: - Private Methods
     private func configureView() {
         // TableView
@@ -41,11 +51,11 @@ class BudgetListViewController: UIViewController {
         
         // NavigationBar
         self.createAddButton()
+        self.createRemoveButton()
     }
     
     private func loadData() {
-        // Load Table Data
-        self.presenter?.loadDataTable()
+        self.presenter?.loadData()
         
         // NavigationBar
         self.title = Constants.Module.BudgetList.title
@@ -55,6 +65,9 @@ class BudgetListViewController: UIViewController {
         // Navigation bar
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
         self.setTransparencyNavigationBar()
+        
+        // View Empty
+        self.viewEmpty.isHidden = true
 
     }
     
@@ -71,6 +84,16 @@ class BudgetListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView:  addButton)
     }
     
+    private func createRemoveButton() {
+        let removeButton = UIButton(type: .custom)
+        
+        removeButton.addTarget(self, action: #selector(goToCreateBudget), for: .touchUpInside)
+        
+        let barButton = UIBarButtonItem(image: .remove, style: .done, target: self, action: #selector(removeDataTable))
+        
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
     private func setTransparencyNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -85,13 +108,21 @@ class BudgetListViewController: UIViewController {
         
         self.presenter?.goToCreateBudget(navigation: navigation)
     }
+    
+    @objc func removeDataTable() {
+        self.presenter?.removeDataTable()
+    }
 }
 
 extension BudgetListViewController: BudgetListViewProtocol {
     
-    func setDataTable(model: BudgetListModel) {
-        self.model = model
+    func setData(viewModel: BudgetListViewModel) {
+        self.model = viewModel
         self.tableView.reloadData()
+    }
+    
+    func emptyView(isHidden: Bool) {
+        self.viewEmpty.isHidden = isHidden
     }
 }
 

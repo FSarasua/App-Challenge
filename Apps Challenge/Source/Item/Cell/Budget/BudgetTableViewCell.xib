@@ -72,7 +72,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar dol
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="lbDefinition" destination="oJp-HB-xND" id="iJF-Xu-esD"/>
+                <outlet property="lbDescription" destination="oJp-HB-xND" id="ast-mu-DgV"/>
                 <outlet property="lbEmail" destination="1v5-d7-tzl" id="A3L-8p-uJ6"/>
                 <outlet property="lbName" destination="cil-KO-bfJ" id="C0Z-xG-eJX"/>
                 <outlet property="lbPhone" destination="JDX-x3-AVt" id="plL-4b-Gml"/>

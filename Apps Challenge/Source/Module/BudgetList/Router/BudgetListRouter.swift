@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol BudgetListRouterProtocol {
+protocol BudgetListRouterProtocol: class {
     func openCreateBudget(navigation: UINavigationController)
 }
 

@@ -7,24 +7,31 @@
 
 import Foundation
 
-protocol BudgetListInteractorInputProtocol {
+protocol BudgetListInteractorInputProtocol: class {
     func getDataTable()
+    func removeDataTable()
 }
 
 class BudgetListInteractor {
-    var presenter: BudgetListInteractorOutputProtocol?
+    weak var presenter: BudgetListInteractorOutputProtocol?
+    let managerCoreData = CoreDataManager.sharedInstance
     let managerBudget = BudgetManager.sharedInstance
 }
 
 extension BudgetListInteractor: BudgetListInteractorInputProtocol {
     
     func getDataTable() {
-        let model = BudgetListModel()
+        let viewModel = BudgetListViewModel()
         let allBudgets = self.managerBudget.getAllBudgets()
         
         for budgetEntity in allBudgets {
-            model.cellModels.append(BudgetCellModel(budget: budgetEntity))
+            viewModel.cellModels.append(BudgetCellModel(budget: budgetEntity))
         }
-        self.presenter?.reponse(model: model)
+        self.presenter?.setData(viewModel: viewModel)
+    }
+    
+    func removeDataTable() {
+        self.managerCoreData.deleteAll()
+        self.presenter?.setData(viewModel: BudgetListViewModel())
     }
 }
