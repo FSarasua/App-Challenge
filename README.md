@@ -1,15 +1,45 @@
 # App-Challenge
-App Challenge
+Esta aplicación resuelve el problema presentado en: Apps Challenge. 
 
-First commit
+# Inicio 🚀
 
-Initial configuration: Added App Icon to Assets, new image "Logo" and updated color "AccentColor". Configure LaunchScreen and AppDelegate. Changed initial flow navigation screen with programatically flow navigation from AppDelegate.
+Estos pasos te permitirán obtener una copia del proyecto en local para el propósito esperado de la prueba.
 
-Deleted files that will not be used during this challenge: Main.storyboard and SceneDelegate.swift.
+# Pre-requisitos 📋
 
-Folder hierarchy created. Structured in the following points:
+¿Qué necesitas para instalar el software?
 
-- Configuration: Files that build the initial base of the project.
-- Database: Files that compose the local database of the project.
-- Resources: Useful files such as fonts, images, etc.
-- Modules: Main section of the application that contains the files that represent the screens, data management, navigation flow, etc.
+**Xcode**: Entorno de desarrollo. 
+
+![Unknown](https://user-images.githubusercontent.com/82720118/117876566-cdf91a80-b2a3-11eb-955c-54394b9185cf.jpeg)
+
+**Sourcetree**: Gestor de flujo.
+
+![Unknown-1](https://user-images.githubusercontent.com/82720118/117876680-f254f700-b2a3-11eb-8d3a-a9a1c5e5f472.jpeg)
+
+# Instalación 🔧
+
+Una vez instalados ambos programas. 
+
+Clonaremos nuestro proyecto en Sourcetree.
+
+Y lo abriremos con Xcode.
+
+# Testing ⚙️
+
+Para realizar las pruebas solo tendrás que seleccionar en qué simulador quieres instalar la app y ejecutar en el botón de "play" en la parte superior del entorno de desarrollo, Xcode.
+
+Una vez el simulador se encienda y se termine de configurar, la aplicación se abrirá automáticamente y podrás usarla.
+
+# Construido con: 🛠️
+
+**Swift** - Lenguaje de programación
+
+**Arquitectura VIPER** - Arquitectura basada en el desarrollo separado por capas.
+
+**Alamofire** - Pod ( Librería externa )
+
+# Autor: ✒️
+
+Francisco Javier Sarasúa Galán - Desarrollo y documentación.
+
