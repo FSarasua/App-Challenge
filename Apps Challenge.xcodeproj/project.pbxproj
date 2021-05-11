@@ -20,13 +20,25 @@
 		EE41C4D7262B1C6F00DD02EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D6262B1C6F00DD02EB /* Assets.xcassets */; };
 		EE41C4DA262B1C6F00DD02EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE41C4D8262B1C6F00DD02EB /* LaunchScreen.storyboard */; };
 		EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */; };
-		EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D7263EEBF400039DD0 /* Budget.swift */; };
+		EE4DE4D8263EEBF400039DD0 /* BudgetListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE4D7263EEBF400039DD0 /* BudgetListVM.swift */; };
+		EE878F2C2649EB51007F4119 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE878F2B2649EB51007F4119 /* UIDevice+Extension.swift */; };
+		EE878F31264A026A007F4119 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE878F30264A026A007F4119 /* ValidationManager.swift */; };
+		EE878F34264A8F73007F4119 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE878F33264A8F73007F4119 /* Utils.swift */; };
+		EE878F38264AA34C007F4119 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE878F37264AA34C007F4119 /* ErrorManager.swift */; };
+		EE878F3C264AA5A1007F4119 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE878F3B264AA5A1007F4119 /* ErrorModel.swift */; };
 		EEA7290B263F698B0053167F /* CreateBudgetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7290A263F698B0053167F /* CreateBudgetRouter.swift */; };
 		EEA7290F263F6A280053167F /* CreateBudgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7290E263F6A280053167F /* CreateBudgetPresenter.swift */; };
 		EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */; };
 		EEA72918263F6B1E0053167F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72917263F6B1E0053167F /* Enums.swift */; };
 		EEA7291F26403A810053167F /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7291E26403A810053167F /* UITextField+Extension.swift */; };
 		EEA7292A26403FA40053167F /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7292926403FA40053167F /* UILabel+Extension.swift */; };
+		EEA7293426404D1A0053167F /* LocationServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7293326404D190053167F /* LocationServerModel.swift */; };
+		EEA72939264051D40053167F /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA72938264051D40053167F /* AlamofireManager.swift */; };
+		EEA7293E2640A7750053167F /* CreateBudgetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7293D2640A7750053167F /* CreateBudgetVM.swift */; };
+		EEA729472640AA020053167F /* CategoryServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA729462640AA020053167F /* CategoryServerModel.swift */; };
+		EEA7294A2640AA180053167F /* SubcategoryServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA729492640AA180053167F /* SubcategoryServerModel.swift */; };
+		EEA7294F2640AA8E0053167F /* CategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7294E2640AA8E0053167F /* CategoryCellModel.swift */; };
+		EEA729532640AAA10053167F /* SubcategoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA729522640AAA10053167F /* SubcategoryCellModel.swift */; };
 		EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */; };
 		EEC6F77E262B60CD0014B053 /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */; };
 		EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */; };
@@ -41,6 +53,8 @@
 		EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA213F263071DB00FE8927 /* LocationTableViewCell.swift */; };
 		EEDA2142263071DB00FE8927 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */; };
 		EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDA2145263074F200FE8927 /* LocationCellModel.swift */; };
+		EEF70C6A26471C900083BB30 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF70C6926471C900083BB30 /* UIScrollView+Extension.swift */; };
+		EEF70C70264914D60083BB30 /* CreateBudgetBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF70C6F264914D60083BB30 /* CreateBudgetBM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,13 +75,25 @@
 		EE41C4D9262B1C6F00DD02EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE41C4DB262B1C6F00DD02EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE4DE4D2263EE49600039DD0 /* BudgetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListRouter.swift; sourceTree = "<group>"; };
-		EE4DE4D7263EEBF400039DD0 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		EE4DE4D7263EEBF400039DD0 /* BudgetListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListVM.swift; sourceTree = "<group>"; };
+		EE878F2B2649EB51007F4119 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		EE878F30264A026A007F4119 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		EE878F33264A8F73007F4119 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EE878F37264AA34C007F4119 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		EE878F3B264AA5A1007F4119 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		EEA7290A263F698B0053167F /* CreateBudgetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetRouter.swift; sourceTree = "<group>"; };
 		EEA7290E263F6A280053167F /* CreateBudgetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetPresenter.swift; sourceTree = "<group>"; };
 		EEA72913263F6A440053167F /* CreateBudgetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetInteractor.swift; sourceTree = "<group>"; };
 		EEA72917263F6B1E0053167F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		EEA7291E26403A810053167F /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		EEA7292926403FA40053167F /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		EEA7293326404D190053167F /* LocationServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServerModel.swift; sourceTree = "<group>"; };
+		EEA72938264051D40053167F /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		EEA7293D2640A7750053167F /* CreateBudgetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetVM.swift; sourceTree = "<group>"; };
+		EEA729462640AA020053167F /* CategoryServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryServerModel.swift; sourceTree = "<group>"; };
+		EEA729492640AA180053167F /* SubcategoryServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryServerModel.swift; sourceTree = "<group>"; };
+		EEA7294E2640AA8E0053167F /* CategoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellModel.swift; sourceTree = "<group>"; };
+		EEA729522640AAA10053167F /* SubcategoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryCellModel.swift; sourceTree = "<group>"; };
 		EEC6F77B262B60CD0014B053 /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
 		EEC6F77C262B60CD0014B053 /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 		EEC6F787262B668B0014B053 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +108,8 @@
 		EEDA213F263071DB00FE8927 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		EEDA2145263074F200FE8927 /* LocationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellModel.swift; sourceTree = "<group>"; };
+		EEF70C6926471C900083BB30 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		EEF70C6F264914D60083BB30 /* CreateBudgetBM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBudgetBM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +144,9 @@
 		EE375EBD263EC1A80063F012 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				EE878F36264AA342007F4119 /* Error */,
+				EE878F2F264A021D007F4119 /* Validation */,
+				EEA72937264051560053167F /* Alamofire */,
 				EE375ECF263EC3BE0063F012 /* Budget */,
 				EE375EBE263EC1ED0063F012 /* CoreData */,
 				EE375EC0263EC1ED0063F012 /* PersistentContainer */,
@@ -219,6 +250,7 @@
 				EEDA2138263068AF00FE8927 /* Colors.xcassets */,
 				EEDA213B263068BA00FE8927 /* Colors.swift */,
 				EEA72917263F6B1E0053167F /* Enums.swift */,
+				EE878F33264A8F73007F4119 /* Utils.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -248,12 +280,12 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		EE4DE4D6263EEBDE00039DD0 /* Budget */ = {
+		EE4DE4D6263EEBDE00039DD0 /* BudgetList */ = {
 			isa = PBXGroup;
 			children = (
-				EE4DE4D7263EEBF400039DD0 /* Budget.swift */,
+				EE4DE4D7263EEBF400039DD0 /* BudgetListVM.swift */,
 			);
-			path = Budget;
+			path = BudgetList;
 			sourceTree = "<group>";
 		};
 		EE4DE4DF263EF6BB00039DD0 /* Entities */ = {
@@ -271,6 +303,38 @@
 				EE1F379B263EF7B500DBC552 /* Budget+CoreDataProperties.swift */,
 			);
 			path = Budget;
+			sourceTree = "<group>";
+		};
+		EE878F2A2649EB3E007F4119 /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				EE878F2B2649EB51007F4119 /* UIDevice+Extension.swift */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
+		EE878F2F264A021D007F4119 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				EE878F30264A026A007F4119 /* ValidationManager.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		EE878F36264AA342007F4119 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				EE878F37264AA34C007F4119 /* ErrorManager.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		EE878F3A264AA590007F4119 /* Error Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE878F3B264AA5A1007F4119 /* ErrorModel.swift */,
+			);
+			path = "Error Model";
 			sourceTree = "<group>";
 		};
 		EEA72908263F69710053167F /* View */ = {
@@ -321,6 +385,8 @@
 		EEA7291C26403A420053167F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EE878F2A2649EB3E007F4119 /* UIDevice */,
+				EEF70C6826471C790083BB30 /* UIScrollView */,
 				EEA7292826403FA40053167F /* UILabel */,
 				EEA7291D26403A480053167F /* UITextField */,
 			);
@@ -341,6 +407,72 @@
 				EEA7292926403FA40053167F /* UILabel+Extension.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		EEA7293126404CC20053167F /* Server Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7293226404CDF0053167F /* Location */,
+				EEA729442640A9990053167F /* Category */,
+				EEA729452640A99E0053167F /* Subcategory */,
+			);
+			path = "Server Model";
+			sourceTree = "<group>";
+		};
+		EEA7293226404CDF0053167F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7293326404D190053167F /* LocationServerModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		EEA72937264051560053167F /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				EEA72938264051D40053167F /* AlamofireManager.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		EEA7293C2640A75C0053167F /* CreateBudget */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7293D2640A7750053167F /* CreateBudgetVM.swift */,
+			);
+			path = CreateBudget;
+			sourceTree = "<group>";
+		};
+		EEA729442640A9990053167F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EEA729462640AA020053167F /* CategoryServerModel.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		EEA729452640A99E0053167F /* Subcategory */ = {
+			isa = PBXGroup;
+			children = (
+				EEA729492640AA180053167F /* SubcategoryServerModel.swift */,
+			);
+			path = Subcategory;
+			sourceTree = "<group>";
+		};
+		EEA7294C2640AA5B0053167F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EEA7294E2640AA8E0053167F /* CategoryCellModel.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		EEA7294D2640AA600053167F /* Subcategory */ = {
+			isa = PBXGroup;
+			children = (
+				EEA729522640AAA10053167F /* SubcategoryCellModel.swift */,
+			);
+			path = Subcategory;
 			sourceTree = "<group>";
 		};
 		EEC6F772262B25EE0014B053 /* Module */ = {
@@ -366,7 +498,10 @@
 		EEC6F782262B66320014B053 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				EEC6F784262B663C0014B053 /* Model */,
+				EE878F3A264AA590007F4119 /* Error Model */,
+				EEF70C6D264913F30083BB30 /* Business Model */,
+				EEA7293126404CC20053167F /* Server Model */,
+				EEC6F784262B663C0014B053 /* View Model */,
 				EEC6F783262B66380014B053 /* Cell */,
 			);
 			path = Item;
@@ -381,13 +516,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		EEC6F784262B663C0014B053 /* Model */ = {
+		EEC6F784262B663C0014B053 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				EE4DE4D6263EEBDE00039DD0 /* Budget */,
+				EEA7293C2640A75C0053167F /* CreateBudget */,
+				EE4DE4D6263EEBDE00039DD0 /* BudgetList */,
 				EE4DE4D5263EEBD600039DD0 /* Location */,
+				EEA7294C2640AA5B0053167F /* Category */,
+				EEA7294D2640AA600053167F /* Subcategory */,
 			);
-			path = Model;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		EEC6F786262B66570014B053 /* Budget */ = {
@@ -426,6 +564,30 @@
 				EEDA2140263071DB00FE8927 /* LocationTableViewCell.xib */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		EEF70C6826471C790083BB30 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EEF70C6926471C900083BB30 /* UIScrollView+Extension.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		EEF70C6D264913F30083BB30 /* Business Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEF70C6E264914D60083BB30 /* CreateBudget */,
+			);
+			path = "Business Model";
+			sourceTree = "<group>";
+		};
+		EEF70C6E264914D60083BB30 /* CreateBudget */ = {
+			isa = PBXGroup;
+			children = (
+				EEF70C6F264914D60083BB30 /* CreateBudgetBM.swift */,
+			);
+			path = CreateBudget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,28 +694,42 @@
 			files = (
 				EEC6F77D262B60CD0014B053 /* BudgetListViewController.swift in Sources */,
 				EE41C4D5262B1C6E00DD02EB /* Apps_Challenge.xcdatamodeld in Sources */,
-				EE4DE4D8263EEBF400039DD0 /* Budget.swift in Sources */,
+				EE4DE4D8263EEBF400039DD0 /* BudgetListVM.swift in Sources */,
 				EEDA2141263071DB00FE8927 /* LocationTableViewCell.swift in Sources */,
 				EEA7290B263F698B0053167F /* CreateBudgetRouter.swift in Sources */,
 				EEC6F789262B668B0014B053 /* BudgetTableViewCell.swift in Sources */,
+				EE878F38264AA34C007F4119 /* ErrorManager.swift in Sources */,
 				EE1F379C263EF7B500DBC552 /* Budget+CoreDataClass.swift in Sources */,
+				EE878F3C264AA5A1007F4119 /* ErrorModel.swift in Sources */,
+				EEF70C6A26471C900083BB30 /* UIScrollView+Extension.swift in Sources */,
+				EEA7293E2640A7750053167F /* CreateBudgetVM.swift in Sources */,
+				EEA7293426404D1A0053167F /* LocationServerModel.swift in Sources */,
 				EEDA213C263068BA00FE8927 /* Colors.swift in Sources */,
+				EE878F34264A8F73007F4119 /* Utils.swift in Sources */,
 				EE41C4CB262B1C6E00DD02EB /* AppDelegate.swift in Sources */,
 				EEA7290F263F6A280053167F /* CreateBudgetPresenter.swift in Sources */,
 				EEA72918263F6B1E0053167F /* Enums.swift in Sources */,
+				EEA7294A2640AA180053167F /* SubcategoryServerModel.swift in Sources */,
 				EE4DE4D3263EE49600039DD0 /* BudgetListRouter.swift in Sources */,
+				EEA729472640AA020053167F /* CategoryServerModel.swift in Sources */,
 				EEC6F78F262C49AB0014B053 /* CreateBudgetViewController.swift in Sources */,
 				EE375ED8263ED3380063F012 /* BudgetListPresenter.swift in Sources */,
 				EEDA213626305D1000FE8927 /* Constants.swift in Sources */,
+				EE878F31264A026A007F4119 /* ValidationManager.swift in Sources */,
+				EEA72939264051D40053167F /* AlamofireManager.swift in Sources */,
 				EEA72914263F6A440053167F /* CreateBudgetInteractor.swift in Sources */,
+				EEA729532640AAA10053167F /* SubcategoryCellModel.swift in Sources */,
 				EEA7292A26403FA40053167F /* UILabel+Extension.swift in Sources */,
 				EE1F379D263EF7B500DBC552 /* Budget+CoreDataProperties.swift in Sources */,
+				EE878F2C2649EB51007F4119 /* UIDevice+Extension.swift in Sources */,
 				EE375ED1263EC4080063F012 /* BudgetManager.swift in Sources */,
 				EEDA2146263074F200FE8927 /* LocationCellModel.swift in Sources */,
 				EEA7291F26403A810053167F /* UITextField+Extension.swift in Sources */,
 				EE375EC9263EC22E0063F012 /* CoreDataManager.swift in Sources */,
 				EE375ECD263EC2510063F012 /* PersistentContainerManager.swift in Sources */,
 				EE375EDB263ED36A0063F012 /* BudgetListInteractor.swift in Sources */,
+				EEF70C70264914D60083BB30 /* CreateBudgetBM.swift in Sources */,
+				EEA7294F2640AA8E0053167F /* CategoryCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

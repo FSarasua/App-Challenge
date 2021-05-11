@@ -20,4 +20,9 @@ class LocationCellModel {
         self.title = title
         self.isLastItem = isLastItem
     }
+    
+    init(serverModel: LocationServerModel, isLastItem: Bool) {
+        self.title = serverModel.name ?? ""
+        self.isLastItem = isLastItem
+    }
 }
